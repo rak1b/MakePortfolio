@@ -1,0 +1,61 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}" type="text/css" />
+
+{% endblock %} 
+{% block title %} Landing {%endblock%}
+ {% block content %}
+<div class="background_full">
+  <nav class="navbar shadow-sm ms-5 navbar-expand-lg nav_container">
+    <a class="navbar-brand" href="#">Navbar</a>
+   
+   
+    <button id = "mybtn" onclick="button_func()"
+    class="hamburger hum_hide  hamburger--spin is-ac"
+    type="button"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+
+    <div class="me-5" id="navbarNav">
+      <ul  id = "phone_nav" class="navbar-nav phone_nav menu_hide ms-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<script>
+const button_func = ()=>{
+    console.log('Helloo')
+    const menu_btn =  document.getElementById("mybtn");
+    menu_btn.classList.toggle('is-active');
+    const phone_nav = document.getElementById("phone_nav");
+    if ( menu_btn.classList.contains('is-active') ){
+        // menu_btn.classList.toggle('MyClass');
+        console.log("is-active")
+        phone_nav.classList.add('menu_show');
+        phone_nav.classList.remove('menu_hide');
+    }else{
+        phone_nav.classList.remove('menu_show');
+        phone_nav.classList.add('menu_hide');
+    }
+
+}
+
+</script>
+{% endblock %}

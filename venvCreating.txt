@@ -1,0 +1,9 @@
+python -m venv venv
+
+was not working ,
+
+so i have installed  virtualenv
+pip install virtualenv 
+
+created with,
+virtualenv -p python <env name> 

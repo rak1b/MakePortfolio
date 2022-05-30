@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} Landing {%endblock %} 
+{% block content %}
+<div class="landing_container">
+  <div class="landing_inner_container shadow-lg">
+    <div class="landing_text">
+      <h1>Make Portfolio</h1>
+      <p>Make your portfolio completely free with less time..</p>
+      <h5>Free-Quick-Fast</h5>
+
+      <a href="/edit/" class="btn btn-danger mt-2">Start Now Free</a>
+    </div>
+
+    <img
+      class="landing_img"
+      src="{%static 'assets/img/landing.svg'%}"
+      alt=""
+      srcset=""
+    />
+  </div>
+</div>
+{% endblock %}
