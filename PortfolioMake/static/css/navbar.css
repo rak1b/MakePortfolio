@@ -16,11 +16,6 @@
   text-decoration: none;
 }
 
-.background_full {
-  background-color: var(--navy-dark);
-  width: 100%;
-  height: 100vh;
-}
 
 
 
@@ -34,16 +29,33 @@
 .hum_hide{
   display: none;
 }
+.filter_6px{
+  filter: blur(6px);
+}
+
+.nav_container{
+  margin:0 10rem;
+}
+
 
 
 @media only screen and (max-width: 750px) {
   .phone_nav{
     background: var(--dark);
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     padding: 20px;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    filter: blur(0px) !important;
+
+
 }
 
+.nav{
+  margin: 0;
+}
 .menu_hide {
   transform: translateX(100%);
   transition: var(--transition);
@@ -54,4 +66,15 @@
 .hum_hide{
   display: block;
 }
+
+.resume_btn{
+  width: 25%;
+  margin-top: 10px;
+}
+
+.nav-item{
+  margin: 20px 0;
+}
+
+
 }

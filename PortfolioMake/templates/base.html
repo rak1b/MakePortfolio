@@ -21,17 +21,21 @@
       href="{% static 'css/index.css' %}"
       type="text/css"
     />
-    <!-- <link
+    <link
       rel="stylesheet"
-      href="{% static 'css/styles.css' %}"
+      href="{% static 'css/Hero/hero.css' %}"
       type="text/css"
-    /> -->
+    />
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     {% block css %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
+    <div id="back">
+
+    
     {% block content %}{% endblock %}
+  </div>
     <script src="{% static 'js/scripts.js' %}"></script>
 
   </body>

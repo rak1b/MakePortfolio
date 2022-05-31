@@ -1,0 +1,37 @@
+{% load static %}
+
+<nav class="navbar shadow-sm  navbar-expand-lg nav_container">
+    <a class="navbar-brand text-capitalize text-xl" href="#"><h2 class="">Rakib</h2> </a>
+   
+   
+    <button id = "mybtn" onclick="button_func()"
+    class="hamburger hum_hide  hamburger--spin is-ac"
+    type="button"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+
+    <div class="ms-auto   " id="navbarNav">
+      <ul  id = "phone_nav" class="navbar-nav phone_nav menu_hide  ">
+        <li class="nav-item me-3 active">
+          <a class="nav-link" href="#">Home </a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link btn btn-success resume_btn" href="#">Resume</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <script src="{% static 'js/navbar.js' %}"></script>
