@@ -1,0 +1,90 @@
+
+.port_hero {
+  height: auto;
+  min-height: 100vh;
+  width: auto;
+  min-width: 50vw;
+  display: flex;
+  margin: 0 30rem;
+}
+.hero_left {
+	margin-top: 1rem;
+}
+.port_hero h3 {
+  color: var(--white);
+
+  font-size: 3rem;
+  margin-top: 7rem;
+  font-style: var(--font-mono);
+  
+}
+
+.port_hero h2 {
+  font-size: clamp(5rem, 7rem, 10rem);
+  font-style: var(--font-sans);
+  margin-top: 1rem;
+  color: var(--pink-red);
+
+  font-weight: bold;
+
+}
+
+.port_hero h4 {
+  font-size: 4.5rem ;
+  color: var(--white);
+
+}
+
+.port_hero p {
+  font-size: 1.5rem;
+  color: var(--white);
+  max-width: 45rem;
+  margin: 2rem 0;
+
+}
+
+@media only screen and (max-width: 1100px) {
+  .port_hero h2 {
+    font-size: 4rem;
+  }
+}
+
+/* for Mobile devices */
+@media only screen and (max-width: 750px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  html {
+    font-size: 58.5%;
+  }
+
+  .port_container{
+    margin: 0 1rem;
+  }
+  .hero_left {
+    margin-top: 10rem;
+  }
+
+  .p_nav {
+    padding: 0;
+  }
+  .port_hero {
+    margin: 0 4rem;
+    flex-wrap: wrap;
+  }
+
+  .port_hero h2 {
+    font-size:3.2rem;
+  }
+
+  .port_hero h4 {
+    font-size: 3.2rem;
+  }
+
+  .port_hero p {
+    font-size: var(--fz-xxs);
+    width: 20rem;
+  }
+
+}

@@ -1,0 +1,80 @@
+.nav_container {
+  height: 80px !important;
+  /* width: 100vw; */
+  --hum__color: var(--pink-red);
+  --hum_width: 3rem;
+  --hum_height: 0.2rem;
+  --hum_before_width: 3rem;
+  --hum_before_height: 0.2rem;
+  --hum_after_width: 3rem;
+  --hum_after_height: 0.2rem;
+}
+
+.nav_container a {
+  cursor: pointer;
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+
+
+
+.menu_show {
+  transform: translateX(0%);
+  transition: var(--transition);
+  visibility: visible;
+  opacity: 1;
+}
+.hum_hide{
+  display: none;
+}
+.filter_6px{
+  filter: blur(6px);
+}
+
+.nav_container{
+  margin:0 10rem;
+}
+
+
+
+@media only screen and (max-width: 750px) {
+  .phone_nav{
+    background: var(--dark);
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    filter: blur(0px) !important;
+
+
+}
+
+.nav{
+  margin: 0;
+}
+.menu_hide {
+  transform: translateX(100%);
+  transition: var(--transition);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.hum_hide{
+  display: block;
+}
+
+.resume_btn{
+  width: 25%;
+  margin-top: 10px;
+}
+
+.nav-item{
+  margin: 20px 0;
+}
+
+
+}

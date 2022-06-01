@@ -1,23 +1,26 @@
-{% extends "base.html" %} 
-{% load static %} 
-{% block css %}
+{% extends "base.html" %}
+ {% load static %} 
+ {% block css %}
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}" type="text/css" />
-<link rel="stylesheet" href="{% static 'css/edit/edit.css' %}" type="text/css" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/edit/edit.css' %}"
+  type="text/css"
+/>
 
-{% endblock %} 
-{% block title %} Landing {%endblock%}
- {% block content %}
-<div class="background_full ">
-
+{% endblock %}
+ {% block title %} Landing {%endblock%}
+  {% block content %}
+<div class="background_full">
   {% include "edit/editbutton.html" %}
-  {% include "edit/editBar.html" %}
-  {% include "navbar.html" %}
-  {% include "Hero/hero.html" %}
+   {% include "edit/editBar.html" %} 
+   {% include "edit/editHero.html" %}
+   {% include "navbar.html" %} 
+   {% include "Hero/hero.html" with data=data %}
   <!-- {% include "modal/modal.html" %} -->
 </div>
 
 <script>
-
 
 </script>
 {% endblock %}

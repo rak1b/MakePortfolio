@@ -62,3 +62,27 @@
     height: 80%;
     margin:0 10px;
 }
+
+.editHero {
+	width: 25vw;
+	position: absolute;
+	right: 10%;
+	background: var(--dark);
+	padding: 52px 31px;
+	border-radius: 7px;
+	bottom: 18%;
+	position: fixed;
+}
+.element_hide {
+	transform: translateX(100%);
+	transition: var(--transition);
+	visibility: hidden;
+	opacity: 0;
+  }
+
+  .element_show {
+	transform: translateX(0%);
+	transition: var(--transition);
+	visibility: visible;
+	opacity: 1;
+  }
