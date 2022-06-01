@@ -1,0 +1,24 @@
+
+
+Django interface edit package
+https://pypi.org/project/django-admin-interface/
+tutorial
+https://www.youtube.com/watch?v=8kJNPzeIb2E&ab_channel=CodeKeen
+https://pypi.org/project/django-froala-editor/
+
+
+add |safe to render html
+
+
+
+
+
+python -m venv venv
+
+was not working ,
+
+so i have installed  virtualenv
+pip install virtualenv 
+
+created with,
+virtualenv -p python <env name> 
