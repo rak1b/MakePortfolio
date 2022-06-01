@@ -4,5 +4,5 @@ from django.urls import path,include
 from .views import editView, updateheroView
 urlpatterns = [
     path("",editView,name="edit"),
-    path("hero/",updateheroView,name="update"),
+    path("hero/",updateheroView,name="hero_update"),
 ]

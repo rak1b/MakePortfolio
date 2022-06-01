@@ -5,15 +5,20 @@ from .models import *
 
 def editView(request):
     hero_contents = heroModel.objects.filter(username="default").first()
-    print("-----------------------------")
-    print(hero_contents)
-    print(hero_contents.username)
-    print("-----------------------------")
 
     return render(request,"edit/editpage.html",context={
         'data':hero_contents
     })
 
+    # before_name:before_name,
+    #   name:name,
+    #   before_desc:before_desc,
+    #   desc:desc,
+
 def updateheroView(request):
-    print(request.data)
+    print("-----------------------------")
+
+    print(request.POST)
+    print("-----------------------------")
+
     return HttpResponse("updated")
