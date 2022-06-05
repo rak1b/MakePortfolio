@@ -22,3 +22,4 @@ def updateheroView(request):
     print("-----------------------------")
 
     return HttpResponse("updated")
+

@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load socialaccount %}
+
  {% load static %} 
  {% block css %}
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}" type="text/css" />
@@ -11,14 +13,32 @@
 {% endblock %}
  {% block title %} Landing {%endblock%}
   {% block content %}
-<div class="background_full">
-  {% include "edit/editbutton.html" %}
-   {% include "edit/editBar.html" %} 
-   {% include "edit/editHero.html" %}
-   {% include "navbar.html" %} 
-   {% include "Hero/hero.html" with data=data %}
-  <!-- {% include "modal/modal.html" %} -->
-</div>
+  {% if user.is_authenticated %}
+  <p>Welcome, {{ user.username }} !</p>
+  <div class="background_full">
+    {% include "edit/editbutton.html" %}
+     {% include "edit/editBar.html" %} 
+     {% include "edit/editHero.html" %}
+     {% include "navbar.html" %} 
+     {% include "Hero/hero.html" with data=data %}
+    <!-- {% include "modal/modal.html" %} -->
+  </div>
+ 
+  {% else %}
+  <div class="jumbotron bg-light p-5">
+    <h1 class="display-4">Hello, There</h1>
+    <p class="lead">For your security purpose,Please do a quick sign up..</p>
+    <hr class="my-4">
+    <p>This will take only 5 seconds...😊</p>
+    <p class="lead">
+   <a href="{% provider_login_url 'google' %}"  class="btn btn-primary btn-lg">Click Here to Login with Google Accounts.</a>
+   <a href="{% provider_login_url 'github' %}"  class="btn btn-primary btn-lg">Click Here to Login with Github Accounts.</a>
+
+    </p>
+  </div>
+ 
+  {% endif %}
+
 
 <script>
 
