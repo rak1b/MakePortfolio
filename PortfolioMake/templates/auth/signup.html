@@ -1,0 +1,33 @@
+{% load socialaccount %}
+
+<div class="w-50 m-auto bg-white p-5 ">
+<div class="signup-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+		<h1 class="text-capitalize text-center">Create an Account</h1>
+		<p class="hint-text text-center">Sign up with your social media account or email address</p>
+		
+        <div class="form-group mt-4">
+        	<input type="text" class="form-control input-lg " name="username" placeholder="Username" required="required">
+        </div>
+		<div class="form-group mt-4">
+        	<input type="email" class="form-control input-lg" name="email" placeholder="Email Address" required="required">
+        </div>
+		<div class="form-group mt-4">
+            <input type="password" class="form-control input-lg" name="password" placeholder="Password" required="required">
+        </div>
+		<div class="form-group mt-4">
+            <input type="password" class="form-control input-lg" name="confirm_password" placeholder="Confirm Password" required="required">
+        </div>  
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-success btn-lg btn-block signup-btn">Sign Up</button>
+        </div>
+    </form>
+		<div class="or-seperator text-center text-capitalize text-danger my-4"><b>or</b></div>
+
+    <div class="social-btn text-center">
+        <h4 class="text-danger">Login With <a href="{% provider_login_url 'google' %}"class="btn btn-danger btn-lg"><i class="fa fa-google"></i> Google</a></h4>
+    </div>
+    <div class="text-center">Already have an account? <a href="#">Login here</a></div>
+</div>
+
+</div>
