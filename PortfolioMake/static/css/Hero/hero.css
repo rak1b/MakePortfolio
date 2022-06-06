@@ -1,4 +1,10 @@
 
+#hero_container{
+  background-color: var(--navy-dark);
+  width: 100vw;
+  height: 100vh;
+}
+
 .port_hero {
   height: auto;
   min-height: 100vh;
