@@ -4,14 +4,15 @@
 <div class="port_hero" id="home">
   
   <div class="hero_left">
+    <input type="hidden" name="check" value={{data.check}}>
     <h3 id="main_before_name">{{data.before_name}}</h3>
-    <!-- <h2 id="main_name">{{ data.first_name }}</h2> -->
-    {% if user.is_authenticated %}
+    <h2 id="main_name">{{data.name}}</h2>
+    <!-- {% if user.is_authenticated %}
 
     <h2 id="main_name">{{ user.first_name }} {{ user.last_name }}</h2>
     {% else %}
     <h2 id="main_name">{{ data.name}}</h2>
-    {% endif %}
+    {% endif %} -->
 
 
     </h2>

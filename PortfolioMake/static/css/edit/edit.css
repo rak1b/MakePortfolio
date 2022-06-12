@@ -87,3 +87,16 @@
 	visibility: visible;
 	opacity: 1;
   }
+
+	.signup-form input,.login-form input{
+		padding: 10px;
+	}
+
+
+	.signup-form {
+		border-radius: 10px 0 0 10px;
+	}
+
+	.login-form {
+		border-radius: 0 10px  10px 0;
+	}

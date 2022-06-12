@@ -9,6 +9,14 @@ body{
   --font-sans: "Calibre","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
+}
+
 .btn_pink_red{
   background-color: var(--pink-red);
 }
