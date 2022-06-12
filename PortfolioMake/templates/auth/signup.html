@@ -177,11 +177,15 @@
         data: data,
         success: (res) => {
           console.log(res);
+          if(res.status === 400){
+            alert(res.data)
+          }else{
+            window.location.reload(true);
+
+          }
+
         },
-        error:(res)=>{
-          console.log(res);
-          window.location.reload(true);
-        }
+        
       });
 
     });

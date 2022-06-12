@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
@@ -13,9 +14,15 @@ def loginView(request):
     user = authenticate(username=username, password=password)
     if user is not None:
         login(request, user)
-        return HttpResponse("Login done successfully")
+        return JsonResponse({
+            'data':"Login done successfully",
+            'status':200
+        })
     else:
-        return HttpResponse("Email or Password Incorrect.")
+        return JsonResponse({
+            'data':"Email or Password Incorrect.",
+            'status':400
+        })
 
 
 def logout_view(request):
