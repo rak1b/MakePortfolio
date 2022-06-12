@@ -25,6 +25,8 @@ pip install virtualenv
 created with,
 virtualenv -p python <env name>
 
+*****Important*******
+source venv/bin/activate   ----> for Linux
 
 
 
