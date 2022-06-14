@@ -1,152 +1,164 @@
-.edit_btn{
-	background: var(--pink-red);
-	width: 8rem;
-	height: 8rem;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: white;
-	position: absolute;
-	top: 0;
-	right: 0;
-    cursor: pointer;
-    z-index: 200;
+.edit_btn {
+  background: var(--pink-red);
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 200;
 }
 
-.edit_btn:hover{
-	background:rgb(238, 66, 66);
-
-
+.edit_btn:hover {
+  background: rgb(238, 66, 66);
 }
-.editBar{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    /* left: 50%; */
-    left: 50%;
-    transform: translate( -50%, -30% );
-    z-index: 150;
-    background-color: var(--white);
-    border-radius: 10px;
-    width: 70vw;
-
+.editBar {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  /* left: 50%; */
+  left: 50%;
+  transform: translate(-50%, -30%);
+  z-index: 150;
+  background-color: var(--white);
+  border-radius: 10px;
+  width: 70vw;
 }
 
 .editBar_close {
-	width: 4rem;
-	height: 4rem;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: var(--navy-dark);
-	background: var(--pink-red);
-	position: absolute;
-	top: -29px;
-	right: -23px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--navy-dark);
+  background: var(--pink-red);
+  position: absolute;
+  top: -29px;
+  right: -23px;
 }
-.editBar_menu{
-    display: flex;
-    height: 6rem;
-    justify-content:space-between;
-    align-items: center;
+.editBar_menu {
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .editBar_menu button {
-    width: 40%;
-	border-radius: 6px;
-	padding: 5px;
-	color: white;
-	font-size: 15px;
-    height: 80%;
-    margin:0 10px;
+  width: 40%;
+  border-radius: 6px;
+  padding: 5px;
+  color: white;
+  font-size: 15px;
+  height: 80%;
+  margin: 0 10px;
 }
 
 .editHero {
-	width: 25vw;
-	position: absolute;
-	right: 10%;
-	background: var(--dark);
-	padding: 52px 31px;
-	border-radius: 7px;
-	bottom: 18%;
-	position: fixed;
-	z-index: 300;
+  width: 25vw;
+  position: absolute;
+  right: 10%;
+  background: var(--dark);
+  padding: 52px 31px;
+  border-radius: 7px;
+  bottom: 18%;
+  position: fixed;
+  z-index: 300;
 }
 .element_hide {
-	transform: translateX(100%);
-	transition: var(--transition);
-	visibility: hidden;
-	opacity: 0;
-  }
+  transform: translateX(100%);
+  transition: var(--transition);
+  visibility: hidden;
+  opacity: 0;
+}
 
-  .element_show {
-	transform: translateX(0%);
-	transition: var(--transition);
-	visibility: visible;
-	opacity: 1;
-  }
+.element_show {
+  transform: translateX(0%);
+  transition: var(--transition);
+  visibility: visible;
+  opacity: 1;
+}
 
-	.signup-form input,.login-form input{
-		padding: 10px;
-	}
+.signup-form input,
+.login-form input {
+  padding: 10px;
+}
 
+.signup-form {
+  border-radius: 10px 0 0 10px;
+}
 
-	.signup-form {
-		border-radius: 10px 0 0 10px;
-	}
+.login-form {
+  border-radius: 0 10px 10px 0;
+}
 
-	.login-form {
-		border-radius: 0 10px  10px 0;
-	}
+/* ----------------------------- */
 
+.editProjects {
+  width: 50vw;
+  right: 10%;
+  background: var(--dark);
+  padding: 52px 31px;
+  border-radius: 7px;
+  /* bottom: 18%; */
+  position: fixed;
+  z-index: 300;
+  overflow: hidden;
+  top: 10%;
+  height: 70vh;
+}
 
+.upload_container {
+  position: relative;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  border-radius: 5px;
+	border: 2px solid;
+	cursor: pointer;
 
+}
 
+.upload_container:hover{
+	/* border: 2px solid var(--pink-red); */
+	background-color: #ece7e7;
+}
 
+.upload_container p {
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: left;
+  color: #666363;
+  font-weight: 350;
+}
+.hidden_file_upload {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 
-	/* ----------------------------- */
+  width: 100%;
 
-	.editProjects {
-		width: 50vw;
-		right: 10%;
-		background: var(--dark);
-		padding: 52px 31px;
-		border-radius: 7px;
-		/* bottom: 18%; */
-		position: fixed;
-		z-index: 300;
-		overflow: hidden;
-		top: 10%;
-		height: 70vh;
-	}
+  height: 100%;
+}
 
-	.upload_container{
-			position: relative;
-			background: white;
-			color: black;
-			font-size: 1rem;
-			border-radius: 5px;
-	}
+.scrollable {
+  height: 0px;
+  min-height: 100%;
+  padding: 8px;
+  overflow-y: scroll;
+}
 
-	.upload_container p{
-			font-size: 1.5rem;
-			padding: 10px;
-			text-align: left;
-			color: #666363;
-			font-weight: 350;
-	}
-	.hidden_file_upload{
-			position: absolute;
-			left: 0;
-			top: 0;
-			opacity: 0;
-	}
-
-	.scrollable {
-		height: 0px;
-		min-height: 100%;
-		padding: 8px;
-		overflow-y: scroll;
-	}
+label{
+		float: left;
+		margin: 8px 0;
+		color: rgb(177, 177, 177);
+		font-size: 14px;
+		font-weight: 400;
+}
