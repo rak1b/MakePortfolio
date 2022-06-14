@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from froala_editor import views
 from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -21,6 +22,8 @@ urlpatterns = [
     path("", include("authentication.urls")),
     path("edit/", include("EditPortfolio.urls")),
     path("accounts/", include("allauth.urls")),
+    path('froala_editor/',include('froala_editor.urls')),
+
 ]
 
 from django.conf import settings

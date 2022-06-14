@@ -109,13 +109,44 @@
 	/* ----------------------------- */
 
 	.editProjects {
-		width: 25vw;
-		position: absolute;
+		width: 50vw;
 		right: 10%;
 		background: var(--dark);
 		padding: 52px 31px;
 		border-radius: 7px;
-		bottom: 18%;
+		/* bottom: 18%; */
 		position: fixed;
 		z-index: 300;
+		overflow: hidden;
+		top: 10%;
+		height: 70vh;
+	}
+
+	.upload_container{
+			position: relative;
+			background: white;
+			color: black;
+			font-size: 1rem;
+			border-radius: 5px;
+	}
+
+	.upload_container p{
+			font-size: 1.5rem;
+			padding: 10px;
+			text-align: left;
+			color: #666363;
+			font-weight: 350;
+	}
+	.hidden_file_upload{
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+	}
+
+	.scrollable {
+		height: 0px;
+		min-height: 100%;
+		padding: 8px;
+		overflow-y: scroll;
 	}

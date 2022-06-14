@@ -1,4 +1,5 @@
 <div id="project_edit" class="editProjects">
+  <div class="scrollable" >
   <!-- <div id="hero_edit" class="editHero element_hide"> -->
   <h3 class="text-danger text-center" >Add Projects </h3c>
   
@@ -6,23 +7,33 @@
     {% csrf_token %}
     <div class="form">
       <div class="form-group ">
-        <input type="text "  class="form-control my-5"  name="title" placeholder="Enter Project Name:">
+        <input type="text "  class="form-control my-5"  name="title" required="required" placeholder="Enter Project Name:">
       </div>
       
 
 
     <div class=" form-group mb-3 ">
-      <div class="">
-        <input type="file" class="bg-white p-2" id="imgInput" name="project_img" >
+      <div class="upload_container">
+        <p>Enter Project Thumbnail : </p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <div class="">
+          <input  type="file" class="bg-white p-2 hidden_file_upload" id="imgInput" name="project_img"  required="required">
+        </div>
       </div>
+      
     </div>
 
     <div class="form-group ">
-      <input type="text"   class="form-control my-5"  name="short_description" placeholder="Short description">
+      <input type="text"   class="form-control my-5"   name="short_description" placeholder="Short description" required="required">
     </div>
     
  <div class="form-group ">
-        <input type="text"   class="form-control my-5"  name="full_description" placeholder="Full Description">
+        <!-- <input type="text"   class="form-control my-5"  name="full_description" placeholder="Full Description"> -->
+
+        {{ form.media }}
+        {{ form.as_p}}
       </div>
 
 
@@ -30,17 +41,17 @@
 
     <input id="add_project_btn" type="button" value="Add Project" class="btn btn-primary "/>
 
-
-
   
    
   </form>
   
-
+</div>
 </div>
 
   
   <script>
+
+
   
   const updateProject = ()=>{
     $('#add_project_btn').click(()=>{
@@ -58,8 +69,12 @@
     data.append('full_description',full_description.value);
     data.append('image',image.files[0]);
     data.append('csrfmiddlewaretoken',csrfmiddlewaretoken.value);
-
       console.log(data);
+    if(title.value===''){
+      alert("Project Name can't be empty..")
+    }else if(short_description.value===''){
+      alert("Short description can't be empty..")
+    }else{
       $.ajax({
         url:"{% url 'add_projects' %}",
         method:'POST',
@@ -71,14 +86,22 @@
         // dataType: 'json', 
         success:(res)=>{
           console.log(res)
+          console.log(res.data)
+          alert("Project Added")
         },
         error:(err)=>{
           console.log(err);
+          alert("Some error occured,try again..")
+
         }
       })
+
+    }
   
     console.log("project update btn clicked")
   })
+
+  
   }
   
  
