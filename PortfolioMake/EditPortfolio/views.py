@@ -85,3 +85,27 @@ def CreateheroView(request):
                 'status': 0
 
     })
+
+
+
+def addProjectView(request):
+    print("-----------------------------")
+
+    print(request.POST)
+
+    print("-----------------------------")
+    print("-----------------------------")
+
+    print(request.FILES.get('image'))
+    print("-----------------------------")
+    if(request.method == "POST"):
+        # image = request.
+        title = request.POST['title']
+
+        short_description = request.POST['short_description']
+        full_description = request.POST['short_description']
+    return JsonResponse({
+        'data': 'test',
+                'status': 0
+
+    })

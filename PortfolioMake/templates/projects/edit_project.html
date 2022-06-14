@@ -1,0 +1,91 @@
+<div id="project_edit" class="editProjects">
+  <!-- <div id="hero_edit" class="editHero element_hide"> -->
+  <h3 class="text-danger text-center" >Add Projects </h3c>
+  
+  <form class="" id="project_Form" method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form">
+      <div class="form-group ">
+        <input type="text "  class="form-control my-5"  name="title" placeholder="Enter Project Name:">
+      </div>
+      
+
+
+    <div class=" form-group mb-3 ">
+      <div class="">
+        <input type="file" class="bg-white p-2" id="imgInput" name="project_img" >
+      </div>
+    </div>
+
+    <div class="form-group ">
+      <input type="text"   class="form-control my-5"  name="short_description" placeholder="Short description">
+    </div>
+    
+ <div class="form-group ">
+        <input type="text"   class="form-control my-5"  name="full_description" placeholder="Full Description">
+      </div>
+
+
+    </div>
+
+    <input id="add_project_btn" type="button" value="Add Project" class="btn btn-primary "/>
+
+
+
+  
+   
+  </form>
+  
+
+</div>
+
+  
+  <script>
+  
+  const updateProject = ()=>{
+    $('#add_project_btn').click(()=>{
+      console.log('for getting data');
+      const title = document.getElementsByName("title")[0]
+      const short_description = document.getElementsByName("short_description")[0]
+      const full_description = document.getElementsByName("full_description")[0]
+      const image = document.getElementById("imgInput")
+    const csrfmiddlewaretoken = document.getElementsByName("csrfmiddlewaretoken")[1]
+    let data = new FormData();	
+    // let formdata = new FormData($('#project_Form').get(0));	
+      console.log(image.files[0]);
+    data.append('title',title.value);
+    data.append('short_description',short_description.value);
+    data.append('full_description',full_description.value);
+    data.append('image',image.files[0]);
+    data.append('csrfmiddlewaretoken',csrfmiddlewaretoken.value);
+
+      console.log(data);
+      $.ajax({
+        url:"{% url 'add_projects' %}",
+        method:'POST',
+        data:data,
+        contentType: false,
+        processData: false,
+        mimeType:"multipart/form-data" ,
+        // cache: false,
+        // dataType: 'json', 
+        success:(res)=>{
+          console.log(res)
+        },
+        error:(err)=>{
+          console.log(err);
+        }
+      })
+  
+    console.log("project update btn clicked")
+  })
+  }
+  
+ 
+  $(document).ready(()=>{
+    updateProject()
+   
+  }) 
+  
+  
+  </script>

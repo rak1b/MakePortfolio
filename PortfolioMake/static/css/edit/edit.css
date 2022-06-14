@@ -100,3 +100,22 @@
 	.login-form {
 		border-radius: 0 10px  10px 0;
 	}
+
+
+
+
+
+
+	/* ----------------------------- */
+
+	.editProjects {
+		width: 25vw;
+		position: absolute;
+		right: 10%;
+		background: var(--dark);
+		padding: 52px 31px;
+		border-radius: 7px;
+		bottom: 18%;
+		position: fixed;
+		z-index: 300;
+	}
