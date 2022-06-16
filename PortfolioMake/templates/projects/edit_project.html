@@ -1,4 +1,4 @@
-<div id="project_edit" class="editProjects">
+<div id="project_edit" class="editProjects element_hide">
   <div class="scrollable" >
   <!-- <div id="hero_edit" class="editHero element_hide"> -->
   <h3 class="text-danger text-center" >Add Projects </h3c>
@@ -54,6 +54,7 @@
 
   
   const updateProject = ()=>{
+    
     $('#add_project_btn').click(()=>{
       console.log('for getting data');
       const title = document.getElementsByName("title")[0]
@@ -82,12 +83,11 @@
         contentType: false,
         processData: false,
         mimeType:"multipart/form-data" ,
-        // cache: false,
-        // dataType: 'json', 
         success:(res)=>{
           console.log(res)
           console.log(res.data)
           alert("Project Added")
+          window.reload()
         },
         error:(err)=>{
           console.log(err);

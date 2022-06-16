@@ -8,6 +8,16 @@
     heroEdit.classList.toggle("element_show");
   };
 
+
+  const show_hide = (id) => {
+    console.log("in show hide///////////////////");
+    console.log(id);
+    const elem = document.getElementById(id);
+
+    console.log("Hero edit clicked...");
+    elem.classList.toggle("element_show");
+  };
+
   const _= (elm)=>{
     let el = document.querySelectorAll(elm)
     if(el.length > 1){

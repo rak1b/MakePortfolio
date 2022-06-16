@@ -1,6 +1,7 @@
 import re
 from django.http import JsonResponse,Http404
 from django.shortcuts import render, HttpResponse
+from django.views import View
 from .models import *
 from .forms import editorForm
 # Create your views here.
@@ -12,6 +13,9 @@ def editView(request):
         username="default").first()
     form = editorForm
 
+    # FOR PROJECT
+    pmodel = projectsModel.objects.filter(user = request.user)
+            
     if hero_contents is not None:
         data = {
             "check": 1,
@@ -31,7 +35,8 @@ def editView(request):
 
     return render(request, "edit/editpage.html", context={
         'data': data,
-        'form':form
+        'form':form,
+        'projects' : pmodel
     })
 
 
@@ -91,14 +96,23 @@ def CreateheroView(request):
     })
 
 
-def addProjectView(request):
-    print("-----------------------------")
-    print("-----------------------------")
-    print(request.FILES.get('image'))
-    print("-----------------------------")
-    
-    if(request.method == "POST"):
-        # image = request.
+class ProjectView(View):
+
+    def get(self,request):
+        pmodel = projectsModel.objects.filter(user = request.user)
+        context ={
+            'projects' : pmodel
+        }
+        print("__________")
+        print(pmodel)
+        print("__________")
+
+        return JsonResponse({
+        'data': context,
+        'status': 400
+
+    })
+    def post(self,request):
         title = request.POST['title']
         image = request.FILES.get('image')
         short_description = request.POST['short_description']
@@ -119,8 +133,12 @@ def addProjectView(request):
             'status': 200
         })
 
-    return JsonResponse({
-        'data': 'Failed',
-        'status': 400
+    
 
-    })
+class showProjectView(View):
+    def get(self,request):
+        pmodel = projectsModel.objects.filter(user = request.user)
+        context ={
+            'projects' : pmodel
+        }
+        # return render(request,'pr')

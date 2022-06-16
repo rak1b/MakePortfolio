@@ -1,0 +1,12 @@
+{%load static%}
+
+<div class="card__container position-relative">
+  <div class="position-absolute its_back"></div>
+  <div class="card__image">
+    <!-- <img src='{% static "assets/img/landing.svg" %}' alt="Not Found" /> -->
+    <img src='{{project.image.url}}' alt="Not Found" />
+  </div>
+  <div class="card__header">{{project.title}}</div>
+
+  <div class="card__desc">{{project.short_description }}</div>
+</div>
