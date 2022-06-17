@@ -14,7 +14,10 @@ def editView(request):
     form = editorForm
 
     # FOR PROJECT
-    pmodel = projectsModel.objects.filter(user = request.user)
+    if request.user.is_authenticated:
+        pmodel = projectsModel.objects.filter(user = request.user)
+    else:
+        pmodel = ''
             
     if hero_contents is not None:
         data = {

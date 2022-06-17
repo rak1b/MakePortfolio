@@ -18,6 +18,18 @@
     elem.classList.toggle("element_show");
   };
 
+  const hide_then_show = (id) => {
+    console.log('hide_then_show');
+    const elem = document.getElementById(id);
+    elem.classList.toggle("element_hide");
+  };
+
+  const show=(id)=>{
+    const elem = document.getElementById(id);
+    elem.classList.remove("element_hide");
+  }
+
+  
   const _= (elm)=>{
     let el = document.querySelectorAll(elm)
     if(el.length > 1){

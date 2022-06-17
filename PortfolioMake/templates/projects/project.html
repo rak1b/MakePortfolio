@@ -6,7 +6,17 @@
     <!-- <img src='{% static "assets/img/landing.svg" %}' alt="Not Found" /> -->
     <img src='{{project.image.url}}' alt="Not Found" />
   </div>
-  <div class="card__header">{{project.title}}</div>
+  <div class="card__header">
+    <h1>{{project.title}}</h1>
+  </div>
 
-  <div class="card__desc">{{project.short_description }}</div>
+  
+
+  <div class="card__desc"><p>{{project.short_description }}</p></div>
+
+  <div class="">
+    <h2 class="badge  bg-danger">Python</h2>
+    <h2 class="badge  bg-danger">Js</h2>
+    <h2 class="badge  bg-danger">Django</h2>
+  </div>
 </div>

@@ -37,8 +37,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--navy-dark);
-  background: var(--pink-red);
+  color: white;
+  background: red;
   position: absolute;
   top: -29px;
   right: -23px;
@@ -84,6 +84,8 @@
   visibility: visible;
   opacity: 1;
 }
+
+
 
 .signup-form input,
 .login-form input {
