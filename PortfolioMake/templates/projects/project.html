@@ -1,6 +1,8 @@
 {%load static%}
 
-<div class="card__container position-relative">
+<div class="card__container position-relative project" onclick="showProject('{{project.id}}')"  id=project_{{project.id}}>
+  <!-- <div class="card__container position-relative" id=project_{{project.id}} onclick="showProject()"> -->
+  <input type="hidden" name="id" id="project_id" value=project_{{project.id}}>
   <div class="position-absolute its_back"></div>
   <div class="card__image">
     <!-- <img src='{% static "assets/img/landing.svg" %}' alt="Not Found" /> -->
@@ -20,3 +22,5 @@
     <h2 class="badge  bg-danger">Django</h2>
   </div>
 </div>
+
+

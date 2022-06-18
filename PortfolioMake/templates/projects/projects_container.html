@@ -5,14 +5,17 @@
           <span>02.</span>Services
         </h2>
       </div>
-      <div class="project_container">
+      <div class="project_container position-relative">
         <div class="project_cards_container">
 
           {% for project in projects %}
            {% include "projects/project.html" with project=project %}
            {% endfor %}
            
+           
         </div>
+      {% include "projects/show_project.html"  %}
+
       </div>
 
       {% include "projects/edit_project.html"  %}
