@@ -1,15 +1,52 @@
-<div id="project_show" class="container m-auto w- bg-white position-absolute top-0 h-75 element_hide">
-  
+<div
+  id="project_show"
+  class="project_scrollable container m-auto w- bg-white position-absolute top-0 h-75 element_hide"
+>
+<h2 class='display-3 text-capitalize text-center'>Project Details </h2>
   {% include "mini/close_btn.html" with id="project_show" %}
-  {% for project in project %}
-  <h2>Helloo</h2>
-  <h2>{{project.title}}</h2>
-
-  {% endfor %}
-
-
-
+  <div class="row p-5">
+    <div class="col-4">
+      <img id="project_thumb" src="" alt="project Img" />
+    </div>
+    <div class="col-8 mt-lg-5">
+      <div class="">
+        <!-- <div class="col-8 d-flex align-items-center flex-row"> -->
+        <h2 id="title" class="">Title</h2>
+        <h3 id="short_description " class="my-lg-3">Short Description</h3>
+        <h4 class="badge bg-white text-dark my-lg-4">GITHUB</h4>
+        <h4 class="badge bg-success">LIVE</h4>
+      </div>
+    </div>
+  </div>
+  <div id="full_description" class="px-5">Full Description</div>
 </div>
 
-
-
+<script>
+  const showProject = (id) => {
+    let pr_id = "project_" + id;
+    console.log(pr_id);
+    show_hide("project_show");
+    $.ajax({
+      url: "{% url 'view_project'  %}",
+      method: "POST",
+      data: {
+        id: id,
+        csrfmiddlewaretoken: "{{csrf_token}}",
+      },
+      success: (res) => {
+        console.log(res);
+        data = res.data;
+        $("#title").text(data.title);
+        $("#project_thumb").attr(
+          "src",
+          `http://127.0.0.1:8000/media/${data.image}`
+        );
+        $("#short_description").text(data.short_description);
+        $("#full_description").html(data.full_description);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  };
+</script>

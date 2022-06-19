@@ -28,13 +28,24 @@ const show = (id) => {
 
  
 
-const showProject = (id)=>{
-let pr_id = "project_"+id
-console.log(pr_id);
+// const showProject = (id)=>{
+// let pr_id = "project_"+id
+// console.log(pr_id);
+// document.getElementById('id').innerText = id;
+// show_hide('project_show')
+// $.ajax({
+//   url:"{% url 'add_projects' %}",
+//   method:'GET',
+//   success:(res)=>{
+//     console.log(res)
+//     console.log(res.data)
+//   },
+//   error:(err)=>{
+//     console.log(err);
 
-show_hide('project_show')
-
-}
+//   }
+// })
+// }
 
 const _ = (elm) => {
   let el = document.querySelectorAll(elm);

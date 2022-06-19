@@ -45,7 +45,10 @@ def editView(request):
 
 def getMyHero(request):
     data = heroModel.objects.filter(username=request.user.username).values()
+    print("_______________________________")
     print(data)
+    print("_______________________________")
+
     return JsonResponse({
         'data': list(data)[0]
     })
@@ -139,9 +142,14 @@ class ProjectView(View):
     
 
 class showProjectView(View):
-    def get(self,request):
-        pmodel = projectsModel.objects.filter(user = request.user)
+    def post(self,request):
+        pmodel = projectsModel.objects.filter(id=request.POST['id']).values()
+        print("_______________________________")
+        print(pmodel)
+        print("_______________________________")
+
         context ={
-            'projects' : pmodel
+            'data' : list(pmodel)[0]
         }
+        return JsonResponse(context)
         # return render(request,'pr')

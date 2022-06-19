@@ -7,6 +7,7 @@ urlpatterns = [
     path("hero/create/",CreateheroView,name="hero_create"),
     path("hero/get/",getMyHero,name="hero_get"),
     path("projects/add/",ProjectView.as_view(),name="add_projects"),
+    path("projects/view/",showProjectView.as_view(),name="view_project"),
     # path("projects/show/",showProjectView.as_view(),name="show_projects"),
 
 ]
