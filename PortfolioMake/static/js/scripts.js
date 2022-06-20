@@ -28,7 +28,8 @@ const show = (id) => {
 
  
 
-// const showProject = (id)=>{
+// const upProject = (id)=>{
+//   console.log('update project');
 // let pr_id = "project_"+id
 // console.log(pr_id);
 // document.getElementById('id').innerText = id;
@@ -46,6 +47,11 @@ const show = (id) => {
 //   }
 // })
 // }
+
+document.getElementById('update_project').addEventListener('click',upProject)
+const upProject = (id)=>{
+console.log('update');
+}
 
 const _ = (elm) => {
   let el = document.querySelectorAll(elm);

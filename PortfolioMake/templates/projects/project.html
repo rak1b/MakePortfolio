@@ -1,26 +1,84 @@
 {%load static%}
 
-<div class="card__container position-relative project" onclick="showProject('{{project.id}}')"  id=project_{{project.id}}>
+<div
+  class="card__container position-relative project"
+  id="project_{{project.id}}"
+>
   <!-- <div class="card__container position-relative" id=project_{{project.id}} onclick="showProject()"> -->
-  <input type="hidden" name="id" id="project_id" value=project_{{project.id}}>
+  <div class="">
+    <!-- <div class="" onclick="more_option()"> -->
+    <svg
+      data-bs-container="body"
+      id="more"
+      class="more_option"
+
+      data-bs-toggle="popover"
+      data-bs-html="true"
+      data-bs-placement="top"
+      data-bs-content="Top popover"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-more-horizontal"
+    >
+      <circle cx="12" cy="12" r="1"></circle>
+      <circle cx="19" cy="12" r="1"></circle>
+      <circle cx="5" cy="12" r="1"></circle>
+    </svg>
+
+    <!-- <button type="button" class="btn btn-secondary top-0 end-0 position-absolute" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+        Popover on top
+      </button> -->
+  </div>
+  <input
+    type="hidden"
+    name="id"
+    id="project_id"
+    value="project_{{project.id}}"
+  />
   <div class="position-absolute its_back"></div>
   <div class="card__image">
     <!-- <img src='{% static "assets/img/landing.svg" %}' alt="Not Found" /> -->
-    <img src='{{project.image.url}}' alt="Not Found" />
+    <img src="{{project.image.url}}" alt="Not Found" />
   </div>
   <div class="card__header">
     <h1>{{project.title}}</h1>
   </div>
 
-  
-
   <div class="card__desc"><p>{{project.short_description }}</p></div>
 
-  <div class="">
+  <!-- <div class="">
     <h2 class="badge  bg-danger">Python</h2>
     <h2 class="badge  bg-danger">Js</h2>
     <h2 class="badge  bg-danger">Django</h2>
+  </div> -->
+  <div
+    class="btn btn-outline-success view_more"
+    onclick="showProject('{{project.id}}')"
+  >
+    View More
   </div>
 </div>
 
 
+<script>
+  var popString = "";
+  popString =
+    popString +
+    `
+      <img class='pop_img btn btn-success' id='update_project' src="{% static 'assets/img/edit.svg' %}" alt="Edit">
+      
+      <img class='pop_img btn btn-danger' id ='delete_project' src="{% static 'assets/img/trash.svg' %}" alt="Delete">
+     `;
+  var items = document.getElementsByClassName('more_option')
+  for(var i=0;i<items.length;i++){
+    items[i].setAttribute('data-bs-content', popString);
+    // document.getElementsByClassName('more_option')[i].setAttribute('data-bs-content', popString);
+  }
+</script>

@@ -116,7 +116,22 @@
     color: white;
     width: 40px;
     height: 40px;
+    cursor: pointer;
   }
+
+  .view_more{
+      z-index: 10;
+       color: white;
+      border: 1px solid var(--white);
+      margin-bottom: 5px;
+      
+  }
+  .view_more:hover{
+    /* border: 1px solid var(--pink-red); */
+    background-color: white;
+    color: black;
+
+  } 
 
 
 
@@ -133,4 +148,42 @@
       background: var(--dark) !important;
       color: var(--pink-red);
       border-radius: 10px;
+      z-index: 50;
+  }
+
+  .more_option{
+      color: white;
+      top: 9px;
+      right: 8px;
+      position: absolute;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      background: #09bce633;
+      padding: 5px;
+      z-index: 20;
+  }
+
+  .more_option:hover{
+    background: #058aa8a0;
+    cursor: pointer;
+
+  }
+
+  .pop_img{
+      border-radius: 50%;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      
+  }
+
+  .popover{
+    background: var(--navy-dark);
+
+  }
+  .popover-body {
+    padding: .5rem .5rem;
+    color: #212529;
+    border-radius: 20px;
   }
