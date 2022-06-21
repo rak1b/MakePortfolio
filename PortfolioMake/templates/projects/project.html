@@ -5,17 +5,27 @@
   id="project_{{project.id}}"
 >
   <!-- <div class="card__container position-relative" id=project_{{project.id}} onclick="showProject()"> -->
-  <div class="">
+  <div class="edit_delete hide" id="options_{{project.id}}" >
+    <img
+      class="pop_img btn btn-success"
+      id="update_project"
+      src="{% static 'assets/img/edit.svg' %}"
+      alt="Edit"
+      onclick="update_project_info('project_edit','{{project.id}}')"
+    />
+
+    <img
+      class="pop_img btn btn-danger"
+      id="delete_project"
+      src="{% static 'assets/img/trash.svg' %}"
+      alt="Delete"
+    />
+  </div>
+
+  <div id="more_{{project.id}}" onclick="openMore('{{project.id}}')" class="">
     <!-- <div class="" onclick="more_option()"> -->
     <svg
-      data-bs-container="body"
-      id="more"
       class="more_option"
-
-      data-bs-toggle="popover"
-      data-bs-html="true"
-      data-bs-placement="top"
-      data-bs-content="Top popover"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -31,10 +41,6 @@
       <circle cx="19" cy="12" r="1"></circle>
       <circle cx="5" cy="12" r="1"></circle>
     </svg>
-
-    <!-- <button type="button" class="btn btn-secondary top-0 end-0 position-absolute" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
-        Popover on top
-      </button> -->
   </div>
   <input
     type="hidden"
@@ -66,19 +72,14 @@
   </div>
 </div>
 
-
 <script>
-  var popString = "";
-  popString =
-    popString +
-    `
-      <img class='pop_img btn btn-success' id='update_project' src="{% static 'assets/img/edit.svg' %}" alt="Edit">
-      
-      <img class='pop_img btn btn-danger' id ='delete_project' src="{% static 'assets/img/trash.svg' %}" alt="Delete">
-     `;
-  var items = document.getElementsByClassName('more_option')
-  for(var i=0;i<items.length;i++){
-    items[i].setAttribute('data-bs-content', popString);
-    // document.getElementsByClassName('more_option')[i].setAttribute('data-bs-content', popString);
-  }
+
+  $(document).ready(function () {
+    
+    
+
+   
+
+    
+  });
 </script>

@@ -1,3 +1,4 @@
+{% load static %}
 <div id="project_edit" class="editProjects element_hide">
   {% include "mini/close_btn.html" with id="project_edit" %}
   <!-- <div onclick='show_hide("project_edit")' class="position-absolute top-0 end-0">
@@ -24,12 +25,10 @@
 
     <div class=" form-group mb-3 ">
       <div class="upload_container">
-        <p>Enter Project Thumbnail : </p>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1" style="width: 90px;height: 55px;color: gray;" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-        </svg>
+        <p id="img_placeholder">Enter Project Thumbnail : </p>
+        <img id="upload_container_img" src="{% static 'assets/img/image.svg' %}" alt="">
         <div class="">
-          <input  type="file" class="bg-white p-2 hidden_file_upload" id="imgInput" name="project_img"  required="required">
+          <input onchange="updateImageName()"  type="file" class="bg-white p-2 hidden_file_upload" id="imgInput" name="project_img"  required="required">
         </div>
       </div>
       
@@ -74,6 +73,22 @@
     }
 
 
+    const updateImageName = ()=>{
+      console.log('Image changed');
+      const image = document.getElementById("imgInput")
+      const img_placeholder = document.getElementById("img_placeholder")
+      const upload_container_img = document.getElementById("upload_container_img")
+      console.log(image.files[0]);
+      const file = image.files[0];
+      img_placeholder.innerHTML =file.name
+      img_placeholder.classList.add('edit_img_placeholder')
+      upload_container_img.src=URL.createObjectURL(file)
+
+      
+
+
+      
+    }
   
   const updateProject = ()=>{
     

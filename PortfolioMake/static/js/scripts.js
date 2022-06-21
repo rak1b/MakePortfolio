@@ -26,33 +26,25 @@ const show = (id) => {
   elem.classList.remove("element_hide");
 };
 
+const normalShow=(id)=>{
+  const elem = document.getElementById(id);
+  elem.classList.toggle("hide");
+}
  
+const openMore = (id)=>{
+  const more = 'more_'+id;
+  const options = 'options_'+id
+  // console.log(more);
+  // console.log(options);
+  normalShow(options)
 
-// const upProject = (id)=>{
-//   console.log('update project');
-// let pr_id = "project_"+id
-// console.log(pr_id);
-// document.getElementById('id').innerText = id;
-// show_hide('project_show')
-// $.ajax({
-//   url:"{% url 'add_projects' %}",
-//   method:'GET',
-//   success:(res)=>{
-//     console.log(res)
-//     console.log(res.data)
-//   },
-//   error:(err)=>{
-//     console.log(err);
-
-//   }
-// })
-// }
-
-document.getElementById('update_project').addEventListener('click',upProject)
-const upProject = (id)=>{
-console.log('update');
 }
 
+const update_project_info = (project_container_id,project_id)=>{
+
+  show_hide(project_container_id)
+  
+}
 const _ = (elm) => {
   let el = document.querySelectorAll(elm);
   if (el.length > 1) {
@@ -61,63 +53,3 @@ const _ = (elm) => {
     return el[0];
   } else return [];
 };
-
-//   console.log("testing")
-//   const getE= (elm)=>{
-//   let el = document.querySelectorAll(elm)
-//     if(el.length > 1){
-//           return el;
-//       }else if(el.length == 1){
-//           return el[0];}
-//       else return []
-//   }
-
-//   console.log("testing")
-//   console.log(getE(".landing_text"))
-
-//   const LoginState = {
-//     which : "signup"
-//   }
-
-//   const SetLoginState =(val)=>{
-//     LoginState.which = val
-//   }
-
-//   const toggleLoginSignUp = ()=>{
-
-//     if (LoginState.which === 'signup') {
-//       // getE("#loginForm").classList.add("hide")
-
-//       getE("#signupForm").classList.toggle("show")
-//     }
-
-//     if (LoginState.which === 'login') {
-//       getE("#loginForm").classList.toggle("show")
-
-//       // getE("#signupForm").classList.add("hide")
-//     }
-
-//     }
-
-// console.log(getE("#openSignup"));
-//   getE("#openSignup").onclick=(e)=>{
-//     console.log("open signup clicked");
-//     console.log(LoginState.which);
-
-//     e.preventDefault()
-//     SetLoginState("signup")
-//     toggleLoginSignUp()
-
-//   }
-
-//   getE("#openLogin").onclick=(e)=>{
-//     console.log("open Login clicked");
-//     console.log(LoginState.which);
-
-//     e.preventDefault()
-//     SetLoginState("login")
-//     toggleLoginSignUp()
-
-//   }
-
-// // signupForm
