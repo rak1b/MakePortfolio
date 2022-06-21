@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 from EditPortfolio.models import heroModel,projectsModel
 from EditPortfolio.forms import editorForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -14,7 +15,7 @@ def publishedView(request,name):
 
     # FOR PROJECT
     if request.user.is_authenticated:
-      pmodel = projectsModel.objects.filter(user = request.user)
+      pmodel = projectsModel.objects.filter(user = User.objects.get(username=name))
     else:
       pmodel = ''
             
