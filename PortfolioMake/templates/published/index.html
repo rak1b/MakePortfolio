@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+ {% load static %} 
+ {% block css %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}" type="text/css" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/edit/edit.css' %}"
+  type="text/css"
+/>
+
+{% endblock %}
+ {% block title %} Landing {%endblock%}
+  {% block content %}
+  <div class="background_full">
+
+  {% if user.is_authenticated %}
+  
+     {% include "navbar.html" %} 
+     {% include "Hero/hero.html" with data=data %}
+     {% include "projects/projects_container.html" with form=form %}
+    <!-- {% include "modal/modal.html" %} -->
+  </div>
+ 
+  {% else %}
+  {% include "auth/signup.html" %} 
+
+
+  {% endif %}
+
+
+<script>
+
+</script>
+{% endblock %}

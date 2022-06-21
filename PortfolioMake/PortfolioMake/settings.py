@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'MyPortfolio',
     'EditPortfolio',
     'authentication',
+    'PublishedPortfolio',
 
     'allauth',   
     'allauth.account',  
