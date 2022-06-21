@@ -65,7 +65,8 @@ const update_project_info = (project_container_id,project_id)=>{
         `http://127.0.0.1:8000/media/${data.image}`
       );
       $("#short_description").val(data.short_description);
-      $("#full_description").html(data.full_description);
+      // $("#full_description").html(data.full_description);
+      $('.fr-element')[0].innerHTML = data.full_description
     },
     error: (err) => {
       console.log(err);
