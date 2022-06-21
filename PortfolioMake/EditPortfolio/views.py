@@ -1,6 +1,6 @@
 import re
 from django.http import JsonResponse,Http404
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import redirect, render, HttpResponse
 from django.views import View
 from .models import *
 from .forms import editorForm
@@ -104,8 +104,9 @@ def CreateheroView(request):
 
 class ProjectView(View):
 
-    def get(self,request):
+    def get(self,request,id):
         pmodel = projectsModel.objects.filter(user = request.user)
+
         context ={
             'projects' : pmodel
         }
@@ -119,10 +120,14 @@ class ProjectView(View):
 
     })
     def post(self,request):
+        id = request.POST['id']
         title = request.POST['title']
         image = request.FILES.get('image')
         short_description = request.POST['short_description']
         form = editorForm(request.POST)
+        print("_____________________")
+        print(id)
+        print("_____________________")
         print(form)
         if form.is_valid():
             full_description = form.cleaned_data['full_description']
@@ -131,8 +136,24 @@ class ProjectView(View):
             full_description = ""
         print(full_description)
         user = request.user
-
-        psave = projectsModel.objects.create(
+        id=int(id)
+        if id:
+            pmodel = projectsModel.objects.filter(id=id).first()
+            pmodel.title = title
+            pmodel.short_description = short_description
+            if image is not None:
+                pmodel.image = image
+            if full_description:
+                pmodel.full_description = full_description
+            pmodel.save()
+            # update_pmodel = projectsModel(id=id,)
+            print(title)
+            print(image)
+            
+            print("full_description")
+            print(full_description)
+        else:
+            psave = projectsModel.objects.create(
             user=user, title=title,image=image, short_description=short_description, full_description=full_description)
         return JsonResponse({
             'data': 'Project Added..',
@@ -143,6 +164,7 @@ class ProjectView(View):
 
 class showProjectView(View):
     def post(self,request):
+        print(request.POST['csrfmiddlewaretoken'])
         pmodel = projectsModel.objects.filter(id=request.POST['id']).values()
         print("_______________________________")
         print(pmodel)
@@ -152,4 +174,12 @@ class showProjectView(View):
             'data' : list(pmodel)[0]
         }
         return JsonResponse(context)
-        # return render(request,'pr')
+
+class DeleteProjectView(View):
+    def post(self,request,id):
+        pmodel = projectsModel.objects.filter(id=id).first()
+        pmodel.delete()
+        # return HttpResponse('/')
+        return redirect(request.META['HTTP_REFERER'])
+
+    # def delete(self,request):

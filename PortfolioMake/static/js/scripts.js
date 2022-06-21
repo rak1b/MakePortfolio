@@ -6,8 +6,11 @@ const hero_show_hide = () => {
   heroEdit.classList.toggle("element_show");
 };
 
-const show_hide = (id) => {
+const show_hide = (id,resetForm) => {
   console.log("in show hide///////////////////");
+  if(resetForm){
+    $("#project_Form")[0].reset();
+  }
   console.log(id);
   const elem = document.getElementById(id);
 
@@ -43,6 +46,31 @@ const openMore = (id)=>{
 const update_project_info = (project_container_id,project_id)=>{
 
   show_hide(project_container_id)
+  console.log(project_id);
+  $.ajax({
+    url: $("#update_project").attr("data-url"),
+    method: "POST",
+    data: {
+      id: project_id,
+      csrfmiddlewaretoken:document.getElementsByName("csrfmiddlewaretoken")[0].value,
+      // csrfmiddlewaretoken:"{{csrf_token}}",
+    },
+    success: (res) => {
+      console.log(res);
+      data = res.data;
+      $("#update_project_id").val(data.id);
+      $("#project_title").val(data.title);
+      $("#upload_container_img").attr(
+        "src",
+        `http://127.0.0.1:8000/media/${data.image}`
+      );
+      $("#short_description").val(data.short_description);
+      $("#full_description").html(data.full_description);
+    },
+    error: (err) => {
+      console.log(err);
+    },
+  });
   
 }
 const _ = (elm) => {

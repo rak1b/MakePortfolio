@@ -1,25 +1,32 @@
 {%load static%}
-
 <div
   class="card__container position-relative project"
   id="project_{{project.id}}"
 >
   <!-- <div class="card__container position-relative" id=project_{{project.id}} onclick="showProject()"> -->
-  <div class="edit_delete hide" id="options_{{project.id}}" >
+  <div class="edit_delete hide" id="options_{{project.id}}">
     <img
-      class="pop_img btn btn-success"
+      class="pop_img btn btn-success mt-2"
       id="update_project"
       src="{% static 'assets/img/edit.svg' %}"
       alt="Edit"
       onclick="update_project_info('project_edit','{{project.id}}')"
+      data-url="{% url 'view_project'  %}"
     />
 
-    <img
-      class="pop_img btn btn-danger"
-      id="delete_project"
-      src="{% static 'assets/img/trash.svg' %}"
-      alt="Delete"
-    />
+    <form action="{% url 'delete_project' project.id  %}" method="POST">
+      {% csrf_token %}
+
+
+      <button type="submit" class="remove_button_property mt-2">
+        <img
+          class="pop_img btn btn-danger"
+          id="delete_project"
+          src="{% static 'assets/img/trash.svg' %}"
+          alt="Delete"
+        />
+      </button>
+    </form>
   </div>
 
   <div id="more_{{project.id}}" onclick="openMore('{{project.id}}')" class="">
@@ -71,15 +78,3 @@
     View More
   </div>
 </div>
-
-<script>
-
-  $(document).ready(function () {
-    
-    
-
-   
-
-    
-  });
-</script>

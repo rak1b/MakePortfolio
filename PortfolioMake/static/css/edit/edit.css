@@ -123,13 +123,14 @@
   font-size: 1rem;
   border-radius: 5px;
 	border: 2px solid;
-	cursor: pointer;
 
 }
 
 .upload_container:hover{
 	/* border: 2px solid var(--pink-red); */
-	background-color: #ece7e7;
+	background-color: #c7f0d2;
+	cursor: pointer!important;
+
 }
 
 .upload_container p {

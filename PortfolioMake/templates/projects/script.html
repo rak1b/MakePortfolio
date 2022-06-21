@@ -1,0 +1,33 @@
+<!-- 
+<script>
+
+const update_project_info = (project_container_id, project_id) => {
+        show_hide(project_container_id);
+        console.log(project_id);
+        console.log($("#" + project_id));
+        $.ajax({
+          url: "{% url 'view_project'  %}",
+          method: "POST",
+          data: {
+            id: project_id,
+            csrfmiddlewaretoken: "{{csrf_token}}",
+          },
+          success: (res) => {
+            console.log(res);
+            data = res.data;
+            $("#title").text(data.title);
+            $("#project_thumb").attr(
+              "src",
+              `http://127.0.0.1:8000/media/${data.image}`
+            );
+            $("#short_description").text(data.short_description);
+            $("#full_description").html(data.full_description);
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
+      };
+  
+
+  </script> -->
