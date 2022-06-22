@@ -1,0 +1,32 @@
+:root{
+  --background-color: rgb(12, 12, 25);
+}
+
+body{
+  background-color: var(--background-color);
+}
+/* document.body.style.setProperty('--background-color', 'blue'); */
+
+/* #hero_container{
+  background-color: var(--navy-dark);
+  width: 100vw;
+  height: 100vh;
+} */
+
+
+/* #projects_container {
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--navy-dark);
+} */
+
+/* .background_full {
+  background-color: var(--navy-dark); 
+  width: 100%;
+  height: 100vh;
+  border-radius: 10px;
+}
+
+
+.landing_container{
+  background-color: var(--navy-dark); } */

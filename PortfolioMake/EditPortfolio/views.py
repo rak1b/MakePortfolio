@@ -4,6 +4,8 @@ from django.shortcuts import redirect, render, HttpResponse
 from django.views import View
 from .models import *
 from .forms import editorForm
+
+from Portfolio_Theme.models import Theme
 # Create your views here.
 
 

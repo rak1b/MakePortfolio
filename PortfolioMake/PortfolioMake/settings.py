@@ -31,8 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # -------------Third Party Apps---------------------------------
     "admin_interface",
      "colorfield",
+    # -------------Third Party Apps---------------------------------
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,17 +44,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',   
 
+    # -------------My Apps---------------------------------
+    'Portfolio_Theme',
     'MyPortfolio',
     'EditPortfolio',
     'authentication',
     'PublishedPortfolio',
+    # -------------My Apps---------------------------------
 
+
+    # -------------Third Party Apps---------------------------------
     'allauth',   
     'allauth.account',  
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google', 
-        'allauth.socialaccount.providers.github', # new
+    'allauth.socialaccount.providers.github', # new
     'froala_editor'
+    # -------------Third Party Apps---------------------------------
+    
 ]
 
 # ---------------------------------------

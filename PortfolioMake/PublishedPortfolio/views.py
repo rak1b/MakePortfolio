@@ -4,21 +4,21 @@ from django.shortcuts import render
 from EditPortfolio.models import heroModel,projectsModel
 from EditPortfolio.forms import editorForm
 from django.contrib.auth.models import User
-
+from Portfolio_Theme.models import Theme
 # Create your views here.
 
 def publishedView(request,name):
+  navy_dark = "#30475E"
+  user = User.objects.filter(username=name).first()
+  if user:
     hero_contents = heroModel.objects.filter(username=name).first()
-    # hero_contents = heroModel.objects.filter(username=request.user).first()
     hero_contents_default = heroModel.objects.filter(username="default").first()
-    form = editorForm
+    pmodel = projectsModel.objects.filter(user = user)
+    bg_color = Theme.objects.filter(user=user).first()
+    print(bg_color)
+    print(bg_color.bg_color)
 
-    # FOR PROJECT
-    if request.user.is_authenticated:
-      pmodel = projectsModel.objects.filter(user = User.objects.get(username=name))
-    else:
-      pmodel = ''
-            
+    
     if hero_contents is not None:
         data = {
             "check": 1,
@@ -38,9 +38,13 @@ def publishedView(request,name):
 
     return render(request, "published/index.html", context={
         'data': data,
-        'form':form,
-        'projects' : pmodel
+        'projects' : pmodel,
+        'color':navy_dark
+        # 'color':bg_color
+        
     })
+  else:
+    return HttpResponse("User dont exists,please create a account")
 
   # return render(request,'published/index.html',context)
 # def publishedView(request,name):

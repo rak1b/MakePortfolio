@@ -17,7 +17,8 @@ from django.contrib import admin
 from froala_editor import views
 from django.urls import path, include
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("admin/dashboard/", admin.site.urls),
+    path("", include("Portfolio_Theme.urls")),
     path("", include("MyPortfolio.urls")),
     path("", include("PublishedPortfolio.urls")),
     path("", include("authentication.urls")),

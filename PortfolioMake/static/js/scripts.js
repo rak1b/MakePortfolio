@@ -74,6 +74,39 @@ const update_project_info = (project_container_id,project_id)=>{
   });
   
 }
+
+const changeCssVarColor = (var_name,colorInput)=>{
+  // document.body.style.setProperty('--background-color', 'blue');
+  document.body.style.setProperty(var_name, $('#'+colorInput).val());
+}
+
+const updateTheme = ()=>{
+  console.log("update theme working-----------------");
+  console.log($("#theme_form").attr("data-url"));
+  const color1 = $('#color1').val()
+  const color2 = $('#color2').val()
+  const color3 = $('#color3').val()
+  data = {
+    color1:color1,
+    color2:color2,
+    color3:color3,
+    csrfmiddlewaretoken:document.getElementsByName("csrfmiddlewaretoken")[0].value,
+
+  }
+  $.ajax({
+    url: $("#theme_form").attr("data-url"),
+    method: "POST",
+    data: data,
+    success: (res) => {
+      console.log(res);
+    },
+    error: (err) => {
+      console.log(err);
+    },
+  });
+}
+
+
 const _ = (elm) => {
   let el = document.querySelectorAll(elm);
   if (el.length > 1) {

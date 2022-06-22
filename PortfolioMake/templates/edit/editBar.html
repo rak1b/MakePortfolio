@@ -17,7 +17,7 @@
     <button id="edit_projects_btn" onclick='show_hide("project_edit",1)' class="btn btn_pink_red">Edit Projects</button>
     <button id="edit_about_btn" onclick='show_hide("about_edit")'  class="btn btn_pink_red">Edit About</button>
     <button id="edit_contact_btn"  onclick='show_hide("contact_edit")' class="btn btn_pink_red">Edit Contact</button>
-    <button  id="edit_save_btn"class="btn btn-success">Save</button>
+    <button  id="edit_color"class="btn btn-success" onclick='show_hide("color_edit")' >Change Color</button>
     <button  class="btn btn-info "><a href="{% url 'logout' %}" class="text-white text-decoration-none"> Log out</a></button>
     <p class="btn-success btn">Logged in as {{request.user}}</p>
  

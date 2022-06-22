@@ -1,0 +1,37 @@
+<div id="color_edit" class="editHero element_hide">
+  {% include "mini/close_btn.html" with id="color_edit" %}
+
+  <h3 class="text-danger text-center">Change Color Scheme</h3>
+
+  <form class="color_form" id="theme_form" method="POST" data-url="{% url 'update_theme'  %}">
+    {% csrf_token %}
+    <div class='d-flex flex-column my-5'>
+    <div class="">
+      <label for="color1">color 1 :</label>
+      {% comment %} dark nav {% endcomment %}
+      <input type="color" onchange="changeCssVarColor('--background-color','color1')" id="color1" name="color1" value="#30475E" />
+    </div>
+
+    <div class=" ">
+      <label for="color2">color 2 :</label>
+      {% comment %} pinkred {% endcomment %}
+      <input type="color" onchange="changeCssVarColor('--pink-red','color2')" id="color2" name="color2" value="#F05454" />
+    </div>
+   
+    <div class="">
+      <label for="color3">color 3 :</label>
+      {% comment %} white {% endcomment %}
+      <input type="color" onchange="changeCssVarColor('--white','color3')" id="color3" name="color3" value="#DDDDDD" />
+    </div>
+  </div>
+
+    <input
+      id="hero_create_btn"
+      type="button"
+      value="Update"
+      class="btn btn-primary m-auto"
+      onclick="updateTheme()"
+    />
+  </form>
+</div>
+
