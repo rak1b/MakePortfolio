@@ -19,16 +19,14 @@
 }
 .editBar {
 	position: fixed;
-	bottom: 0;
+	bottom: 5%;
 	left: 50%;
 	transform: translate(-50%, -30%);
 	z-index: 150;
 	border-radius: 10px;
-	width: 70vw;
-	/* background: var(--navy-dark); */
-	background: var(--dark);
-  /* background-color: rgb(201, 201, 201); */
-	/* color: white; */
+	width: auto;
+	cursor: pointer;
+	box-shadow: 98px 42px 78px -14px rgba(0,0,0,0.1);
 }
 
 .editBar_close {
@@ -45,9 +43,10 @@
   right: -23px;
 }
 .editBar_menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 10px;
 }
 
 .editBar_menu button {
@@ -67,11 +66,21 @@
 	border-radius: 5px;
 	box-shadow: 23px 1px 57px -4px rgba(0,0,0,0.1),8px -4px 15px -3px rgba(0,0,0,0.1);
 	background: white;
-  margin: 2px 4px;
+	margin: 2px 4px;
+	height: 30px;
+	font-weight: bold;
+	color: #193c61;
 }
 
-.editBar_btn_group svg{
-  width: 25px;
+.editBar_btn_group:hover{
+	background: rgb(234, 233, 233);
+
+
+}
+
+.editBar_btn_group svg {
+	width: 14px;
+	margin: 0 4px;
 }
 
 .editBar_btn_group p{
