@@ -8,9 +8,11 @@
     <script src="{% static 'js/JQ.js' %}"></script>
     <script src="{% static 'js/GetEMY.js' %}"></script>
 
+
     <!-- Dont move it -->
     <script src="{% static 'js/scripts.js' %}"></script>
     <!-- otherwise inline js will not work -->
+
 
     <link
       rel="stylesheet"
@@ -56,6 +58,20 @@
     
     <!-- <div id="back"></div> -->
     {% block content %}{% endblock %}
+    
+    <script>
+      // const changeCssVarColor = (var_name,colorInput)=>{
+        // changeCssVarColor()
+        // window.onload =function(){
+        console.log('{{theme.color1|slice:"1:" }}');
+        console.log('{{theme.color2|slice:"1:" }}');
+        console.log('{{theme.color3|slice:"1:" }}');
+        changeCssVarColorFromDjango('--navy-dark','{{theme.color1}}')
+        changeCssVarColorFromDjango('--pink-red','{{theme.color2}}')
+        changeCssVarColorFromDjango('--white','{{theme.color3}}')
+      // }
+          </script>
+      
     <script src="{% static 'assets/bootstrap/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 

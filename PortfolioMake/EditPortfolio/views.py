@@ -13,6 +13,8 @@ def editView(request):
     hero_contents = heroModel.objects.filter(username=request.user).first()
     hero_contents_default = heroModel.objects.filter(
         username="default").first()
+    theme = Theme.objects.filter(user=request.user.id).first()
+
     form = editorForm
 
     # FOR PROJECT
@@ -41,7 +43,8 @@ def editView(request):
     return render(request, "edit/editpage.html", context={
         'data': data,
         'form':form,
-        'projects' : pmodel
+        'projects' : pmodel,
+        'theme':theme
     })
 
 

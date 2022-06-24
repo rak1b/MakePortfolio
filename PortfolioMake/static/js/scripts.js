@@ -76,9 +76,23 @@ const update_project_info = (project_container_id,project_id)=>{
 }
 
 const changeCssVarColor = (var_name,colorInput)=>{
-  // document.body.style.setProperty('--background-color', 'blue');
-  document.body.style.setProperty(var_name, $('#'+colorInput).val());
+
+  const r = document.querySelector(':root');
+  console.log(var_name);
+  // console.log('#'+$(colorInput));
+  console.log($('#'+colorInput).val());
+  r.style.setProperty(var_name, $('#'+colorInput).val());
 }
+const changeCssVarColorFromDjango = (var_name,colorInput)=>{
+  const r = document.querySelector(':root');
+  r.style.setProperty(var_name, colorInput);
+  // r.style.setProperty(var_name, $('#'+colorInput).val());
+}
+// changeCssVarColorFromDjango('--navy-dark','red')
+// var r = document.querySelector(':root');
+// r.style.setProperty('--navy-dark','green');
+// r.style.setProperty('--white', 'red');
+
 
 const updateTheme = ()=>{
   console.log("update theme working-----------------");
