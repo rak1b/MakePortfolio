@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # -------------Third Party Apps---------------------------------
     "admin_interface",
      "colorfield",
+    #  pip install django-admin-interface
     # -------------Third Party Apps---------------------------------
 
     'django.contrib.admin',
@@ -54,12 +55,14 @@ INSTALLED_APPS = [
 
 
     # -------------Third Party Apps---------------------------------
+    # pip install django-allauth
     'allauth',   
     'allauth.account',  
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google', 
     'allauth.socialaccount.providers.github', # new
     'froala_editor'
+    # pip install django-froala-editor
     # -------------Third Party Apps---------------------------------
     
 ]
