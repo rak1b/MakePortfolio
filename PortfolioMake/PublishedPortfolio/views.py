@@ -8,15 +8,12 @@ from Portfolio_Theme.models import Theme
 # Create your views here.
 
 def publishedView(request,name):
-  navy_dark = "#30475E"
   user = User.objects.filter(username=name).first()
   if user:
     hero_contents = heroModel.objects.filter(username=name).first()
     hero_contents_default = heroModel.objects.filter(username="default").first()
     pmodel = projectsModel.objects.filter(user = user)
-    bg_color = Theme.objects.filter(user=user).first()
-    print(bg_color)
-    print(bg_color.bg_color)
+    theme = Theme.objects.filter(user=user).first()
 
     
     if hero_contents is not None:
@@ -39,7 +36,7 @@ def publishedView(request,name):
     return render(request, "published/index.html", context={
         'data': data,
         'projects' : pmodel,
-        'color':navy_dark
+        'theme':theme
         # 'color':bg_color
         
     })

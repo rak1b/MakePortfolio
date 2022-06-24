@@ -18,16 +18,17 @@
   background: rgb(238, 66, 66);
 }
 .editBar {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  /* left: 50%; */
-  left: 50%;
-  transform: translate(-50%, -30%);
-  z-index: 150;
-  background-color: var(--white);
-  border-radius: 10px;
-  width: 70vw;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, -30%);
+	z-index: 150;
+	border-radius: 10px;
+	width: 70vw;
+	/* background: var(--navy-dark); */
+	background: var(--dark);
+  /* background-color: rgb(201, 201, 201); */
+	/* color: white; */
 }
 
 .editBar_close {
@@ -45,7 +46,6 @@
 }
 .editBar_menu {
   display: flex;
-  height: 6rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -59,6 +59,25 @@
   height: 80%;
   margin: 0 10px;
 }
+
+.editBar_btn_group {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 23px 1px 57px -4px rgba(0,0,0,0.1),8px -4px 15px -3px rgba(0,0,0,0.1);
+	background: white;
+  margin: 2px 4px;
+}
+
+.editBar_btn_group svg{
+  width: 25px;
+}
+
+.editBar_btn_group p{
+  margin: auto;
+}
+
 
 .editHero {
   width: 25vw;
