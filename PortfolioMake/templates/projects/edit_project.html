@@ -26,10 +26,10 @@
 
     <div class=" form-group mb-3 ">
       <div class="upload_container">
-        <p id="img_placeholder">Enter Project Thumbnail : </p>
-        <img id="upload_container_img" class="upload_container_img" src="{% static 'assets/img/image.svg' %}" alt="">
+        <p id="project_img_placeholder">Enter Project Thumbnail : </p>
+        <img id="project_preview_image" class="upload_container_img" src="{% static 'assets/img/image.svg' %}" alt="">
         <div class="">
-          <input onchange="updateImageName()"  type="file" class="bg-white p-2 hidden_file_upload" id="imgInput" name="project_img"  required="required">
+          <input onchange="ImagePreview('project_image','project_img_placeholder','project_preview_image')"  type="file" class="bg-white p-2 hidden_file_upload" id="project_image" name="project_img"  required="required">
         </div>
       </div>
       
@@ -62,16 +62,7 @@
   <script>
 
     
-    const hideEdit = ()=>{
-      // $('body').click(()=>{
-      //   const elem = document.getElementById('project_edit');
-      //   console.log("-_____ clicked...");
-      //   elem.classList.remove("element_show");
-      //   elem.classList.add("element_hide");
-
-      // })
-
-    }
+  
 
 
     const updateImageName = ()=>{
@@ -146,7 +137,6 @@
  
   $(document).ready(()=>{
     updateProject()
-    hideEdit()
    
   }) 
   

@@ -9,3 +9,4 @@ class projectAdmin(admin.ModelAdmin):
 
 admin.site.register(heroModel, HeroAdmin)
 admin.site.register(projectsModel, projectAdmin)
+admin.site.register(NavbarModel)

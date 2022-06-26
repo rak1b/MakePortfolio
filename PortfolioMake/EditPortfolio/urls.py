@@ -9,6 +9,7 @@ urlpatterns = [
     path("projects/add/",ProjectView.as_view(),name="add_projects"),
     path("projects/view/",showProjectView.as_view(),name="view_project"),
     path("projects/delete/<int:id>",DeleteProjectView.as_view(),name="delete_project"),
+    path("navbar/edit",ProjectView.as_view(),name="navbar_edit"),
     # path("projects/show/",showProjectView.as_view(),name="show_projects"),
 
 ]

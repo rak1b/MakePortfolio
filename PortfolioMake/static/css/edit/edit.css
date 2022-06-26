@@ -145,13 +145,15 @@
 }
 
 .upload_container {
-  position: relative;
-  background: white;
-  color: black;
-  font-size: 1rem;
-  border-radius: 5px;
+	position: relative;
+	background: white;
+	color: black;
+	font-size: 1rem;
+	border-radius: 5px;
 	border: 2px solid;
-
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .upload_container:hover{

@@ -22,7 +22,7 @@ urlpatterns = [
     path("", include("MyPortfolio.urls")),
     path("", include("PublishedPortfolio.urls")),
     path("", include("authentication.urls")),
-    path("edit/", include("EditPortfolio.urls")),
+    path("edit/my/", include("EditPortfolio.urls")),
     path("accounts/", include("allauth.urls")),
     path('froala_editor/',include('froala_editor.urls')),
 

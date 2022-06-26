@@ -1,0 +1,90 @@
+{% load static%}
+
+<div id="nav_edit" class="editHero element_hide">
+  {% include "mini/close_btn.html" with id="nav_edit" %}
+
+<h3 class="text-danger text-center" >Edit Navbar </h3>
+
+<form class="" method="POST" action="">
+  {% csrf_token %}
+    <div class=" form-group mb-3 ">
+      <div class="upload_container">
+        <p id="img_placeholder_nav">Enter Logo : </p>
+        <img id="upload_container_img_nav" class="upload_container_img" src="{% static 'assets/img/image.svg' %}" alt="">
+        <div class="">
+          <input onchange="ImagePreview('imgInput_nav','img_placeholder_nav','upload_container_img_nav')"  type="file" class="bg-white p-2 hidden_file_upload" id="imgInput_nav" name="project_img"  required="required">
+        </div>
+      </div>
+      
+    </div>
+
+    <div class=" form-group mb-3 ">
+      <div class="upload_container">
+        <p id="img_placeholder_resume">Upload Resume : </p>
+        <img id="upload_container_img_resume" class="upload_container_pdf" src="{% static 'assets/img/pdf.svg' %}" alt="">
+        <div class="">
+          <input onchange="PdfPreview('imgInput_resume','img_placeholder_resume','upload_container_img_resume')"  type="file" class="bg-white p-2 hidden_file_upload" id="imgInput_resume" name="project_img"  required="required">
+        </div>
+      </div>
+      
+    </div>
+   
+
+ 
+  <input id="navbar_update_btn" type="button" value="Update" class="btn btn-primary "/>
+</form>
+
+</div>
+
+<script>
+
+
+const navbar_update = ()=>{
+  
+  $('#navbar_update_btn').click(()=>{
+    console.log('navbar getting data');
+    const logo = document.getElementById("imgInput_nav")
+    const resume = document.getElementById("imgInput_resume")
+  const csrfmiddlewaretoken = "{{csrf_token}}"
+  //const csrfmiddlewaretoken = document.getElementsByName("csrfmiddlewaretoken")[1]
+  let data = new FormData();	
+  // let formdata = new FormData($('#project_Form').get(0));	
+    console.log(logo.files[0]);
+    console.log(resume.files[0]);
+  data.append('logo',logo.files[0]);
+  data.append('resume',resume.files[0]);
+  data.append('csrfmiddlewaretoken',csrfmiddlewaretoken);
+    console.log(data);
+$.ajax({
+  url:"{% url 'navbar_edit' %}",
+  method:'POST',
+  data:data,
+  contentType: false,
+  processData: false,
+  mimeType:"multipart/form-data" ,
+  success:(res)=>{
+    console.log(res)
+    console.log(res.data)
+    alert("Navbar Added")
+    location.reload()
+  },
+  error:(err)=>{
+    console.log(err);
+    alert("Some error occured,try again..")
+
+  }
+})
+
+})
+
+
+}
+
+
+$(document).ready(()=>{
+  navbar_update()
+}) 
+
+
+
+</script>

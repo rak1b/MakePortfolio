@@ -121,6 +121,31 @@ const updateTheme = ()=>{
 }
 
 
+const ImagePreview = (hiddenImageInput,ImagePlaceHolder,PreviewImage)=>{
+  console.log('Image changed');
+  const image = document.getElementById(hiddenImageInput)
+  const img_placeholder = document.getElementById(ImagePlaceHolder)
+  const previewImage = document.getElementById(PreviewImage)
+  const file = image.files[0];
+  img_placeholder.innerHTML =file.name
+  img_placeholder.classList.add('edit_img_placeholder')
+  previewImage.src=URL.createObjectURL(file)
+
+}
+
+
+const PdfPreview = (hiddenImageInput,ImagePlaceHolder,PreviewImage)=>{
+  console.log('pdf changed');
+  const pdf = document.getElementById(hiddenImageInput)
+  const pdf_placeholder = document.getElementById(ImagePlaceHolder)
+  const preview_pdf = document.getElementById(PreviewImage)
+  const pdf_file = pdf.files[0];
+  pdf_placeholder.innerHTML =pdf_file.name
+  pdf_placeholder.classList.add('edit_img_placeholder')
+
+}
+
+
 const _ = (elm) => {
   let el = document.querySelectorAll(elm);
   if (el.length > 1) {

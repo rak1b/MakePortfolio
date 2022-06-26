@@ -188,3 +188,18 @@ class DeleteProjectView(View):
         return redirect(request.META['HTTP_REFERER'])
 
     # def delete(self,request):
+class ProjectView(View):
+
+    def get(self,request,id):pass
+    def post(self,request):
+        logo = request.FILES.get('logo')
+        resume = request.FILES.get('resume')
+        user = request.user
+        Nav_save = NavbarModel.objects.create(
+            user=user, logo=logo,resume=resume)
+        return JsonResponse({
+            'data': 'Project Added..',
+            'status': 200
+        })
+
+    

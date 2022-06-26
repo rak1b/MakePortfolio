@@ -22,3 +22,10 @@ class projectsModel(models.Model):
     full_description = FroalaField()
     image = models.ImageField(upload_to ='projects/')
     created = models.DateTimeField(auto_now_add=True)
+
+class NavbarModel(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    logo = models.ImageField(upload_to ='projects/')
+    resume = models.FileField(upload_to ='resume/')
+
+
