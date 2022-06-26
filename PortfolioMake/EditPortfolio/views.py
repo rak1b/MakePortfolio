@@ -14,6 +14,8 @@ def editView(request):
     hero_contents_default = heroModel.objects.filter(
         username="default").first()
     theme = Theme.objects.filter(user=request.user.id).first()
+    navdetails = NavbarModel.objects.filter(user=request.user.id).first()
+
 
     form = editorForm
 
@@ -44,7 +46,8 @@ def editView(request):
         'data': data,
         'form':form,
         'projects' : pmodel,
-        'theme':theme
+        'theme':theme,
+        'navbar':navdetails,
     })
 
 

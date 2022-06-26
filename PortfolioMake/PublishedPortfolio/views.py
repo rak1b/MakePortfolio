@@ -5,10 +5,13 @@ from EditPortfolio.models import heroModel,projectsModel
 from EditPortfolio.forms import editorForm
 from django.contrib.auth.models import User
 from Portfolio_Theme.models import Theme
+from EditPortfolio.models import NavbarModel
 # Create your views here.
 
 def publishedView(request,name):
   user = User.objects.filter(username=name).first()
+  navdetails = NavbarModel.objects.filter(user=user.id).first()
+
   if user:
     hero_contents = heroModel.objects.filter(username=name).first()
     hero_contents_default = heroModel.objects.filter(username="default").first()
@@ -36,7 +39,8 @@ def publishedView(request,name):
     return render(request, "published/index.html", context={
         'data': data,
         'projects' : pmodel,
-        'theme':theme
+        'theme':theme,
+        'navbar':navdetails
         # 'color':bg_color
         
     })

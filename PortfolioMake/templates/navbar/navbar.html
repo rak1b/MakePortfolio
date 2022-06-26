@@ -2,7 +2,7 @@
 
 <nav id="home" class="navbar shadow-sm  navbar-expand-lg nav_container">
   
-    <a class="navbar-brand text-capitalize text-xl" href="#"><h2 class="">{{request.user}}</h2> </a>
+    <a class="navbar-brand text-capitalize text-xl" href="#"><img class="logo_image" src="{{navbar.logo.url}}" alt=""> </a>
    
    
     <button id = "mybtn" onclick="button_func()"
@@ -29,7 +29,7 @@
           <a class="nav-link" href="#contact">Contact</a>
         </li>
         <li class="nav-item me-5">
-          <a class="nav-link btn btn-success resume_btn" href="#">Resume</a>
+          <a class="nav-link btn btn-success resume_btn" href="{{navbar.resume.url}}">Resume</a>
         </li>
       </ul>
     </div>

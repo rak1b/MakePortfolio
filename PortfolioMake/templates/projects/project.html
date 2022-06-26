@@ -28,7 +28,9 @@
       </button>
     </form>
   </div>
-
+  {% if published %}
+  
+  {% else %}
   <div id="more_{{project.id}}" onclick="openMore('{{project.id}}')" class="">
     <!-- <div class="" onclick="more_option()"> -->
     <svg
@@ -49,6 +51,8 @@
       <circle cx="5" cy="12" r="1"></circle>
     </svg>
   </div>
+  {% endif %}
+
   <input
     type="hidden"
     name="id"
