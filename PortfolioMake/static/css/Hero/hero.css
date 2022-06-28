@@ -12,6 +12,7 @@
   min-width: 50vw;
   display: flex;
   margin: 0 30rem;
+  position: relative;
 }
 .hero_left {
 	margin-top: 1rem;
@@ -47,6 +48,29 @@
   max-width: 45rem;
   margin: 2rem 0;
 
+}
+
+.social svg{
+  opacity: 0.4;
+  width: 40px;
+
+
+}
+
+  
+
+
+.hero_right {
+	width: 40px;
+  margin: 1rem 0;
+}
+
+.line{
+    width: 2px;
+    background: var(--white);
+    opacity: 0.4;
+    height: 50px;
+    
 }
 
 @media only screen and (max-width: 1100px) {

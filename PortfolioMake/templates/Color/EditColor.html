@@ -8,20 +8,17 @@
     <div class='d-flex flex-column my-5'>
     <div class="">
       <label for="color1">color 1 :</label>
-      {% comment %} dark nav {% endcomment %}
-      <input type="color" onchange="changeCssVarColor('--navy-dark','color1')" id="color1" name="color1" value="#30475E" />
+      <input type="color" onchange="changeCssVarColor('--navy-dark','color1')" id="color1" name="color1" value="{{theme.color1}}"/>
     </div>
 
     <div class=" ">
       <label for="color2">color 2 :</label>
-      {% comment %} pinkred {% endcomment %}
-      <input type="color" onchange="changeCssVarColor('--pink-red','color2')" id="color2" name="color2" value="#F05454" />
+      <input type="color" onchange="changeCssVarColor('--pink-red','color2')" id="color2" name="color2" value="{{theme.color2}}" />
     </div>
     
     <div class="">
       <label for="color3 ">color 3 :</label>
-      {% comment %} white {% endcomment %}
-      <input type="color" onchange="changeCssVarColor('--white','color3')" id="color3" name="color3" value="#DDDDDD" />
+      <input type="color" onchange="changeCssVarColor('--white','color3')" id="color3" name="color3" value="{{theme.color3}}" />
     </div>
   </div>
 
