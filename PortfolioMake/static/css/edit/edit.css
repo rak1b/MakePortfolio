@@ -98,6 +98,7 @@
   bottom: 18%;
   position: fixed;
   z-index: 300;
+  height: 70vh;
 }
 .element_hide {
   transform: translateX(100%);
@@ -207,4 +208,38 @@ label{
 		color: rgb(177, 177, 177);
 		font-size: 14px;
 		font-weight: 400;
+}
+
+
+/* for Mobile devices */
+@media only screen and (max-width: 750px) {
+  body {
+    overflow-x: hidden;
+  }
+
+
+  html {
+    font-size: 58.5%;
+  }
+
+  .element_show {
+    width: 55vh !important;
+  }
+
+  .edit_btn {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  }
+
+@media only screen and (min-width: 751px) and (max-width: 1300px) {
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .port_hero {
+    margin: 0 15rem;
+  }
 }

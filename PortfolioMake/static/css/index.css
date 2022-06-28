@@ -28,6 +28,12 @@ html {
   
 
 }
+.scrollable-y {
+  width: 0px;
+  min-width: 90%;
+  padding: 8px;
+  overflow-x: scroll;
+}
 
 #back{
 	padding: 50px;
@@ -163,8 +169,14 @@ html {
     overflow-x: hidden;
   }
 
+
   html {
     font-size: 58.5%;
   }
+
+  .element_show {
+    width: 55vh !important;
+  }
+
 
   }

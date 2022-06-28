@@ -59,6 +59,14 @@
 
 
 }
+.nav_container{
+  margin:0 2rem;
+}
+
+.logo_image {
+	width: 60px;
+	height: 60px;
+}
 
 .nav{
   margin: 0;

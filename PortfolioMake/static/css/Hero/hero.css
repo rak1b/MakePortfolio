@@ -63,16 +63,19 @@
 
 
 }
-.resume_btn{
-	background: var(--pink-red);
+
+.resume_btn {
 	outline: none;
 	border: none;
+	border: 3px solid var(--white);
+	border-radius: 7px;
+	padding: 10px 12px;
 }
-
 .resume_btn a{
 	color: var(--white) !important;
   text-decoration: none;
   background: none;
+  font-size: 15px;
 
 }
 
@@ -84,6 +87,8 @@
 .hero_right {
 	width: 40px;
   margin-top: 7rem;
+
+  right: -3rem; 
 }
 
 .line{
@@ -92,6 +97,10 @@
     opacity: 0.4;
     height: 50px;
     
+}
+
+.hero_edit{
+  height: 70vw;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -114,28 +123,59 @@
     margin: 0 1rem;
   }
   .hero_left {
-    margin-top: 10rem;
+    margin-top: 0;
+
+  }
+  .social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
+  .social svg {
+    opacity: 0.4;
+    width: 30px;
+    height: 30px;
+  }
+
+
+
+  .line {
+    width: 1px;
+    height: 33px;
+  }
   .p_nav {
     padding: 0;
   }
   .port_hero {
-    margin: 0 4rem;
+    margin: 4rem 4rem;
     flex-wrap: wrap;
   }
 
-  .port_hero h2 {
-    font-size:3.2rem;
+  .port_hero h3 {
+    font-size:1.7rem;
   }
 
   .port_hero h4 {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
   }
 
   .port_hero p {
     font-size: var(--fz-xxs);
     width: 20rem;
+  }
+
+  .hero_left {
+    width: 89%;
+  }
+  .hero_right {
+    right: 0;
+  }
+
+  #hero_container {
+    height: 65vh;
+    margin-top: 2rem;
   }
 
 }

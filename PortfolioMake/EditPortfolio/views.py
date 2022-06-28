@@ -1,3 +1,4 @@
+from audioop import lin2lin
 import re
 from django.http import JsonResponse,Http404
 from django.shortcuts import redirect, render, HttpResponse
@@ -48,6 +49,7 @@ def editView(request):
         'projects' : pmodel,
         'theme':theme,
         'navbar':navdetails,
+        'social':hero_contents,
     })
 
 
@@ -74,13 +76,21 @@ def CreateheroView(request):
         before_desc = request.POST['before_desc']
         desc = request.POST['desc']
         check = request.POST['check']
+        facebook = request.POST['facebook']
+        github = request.POST['github']
+        mail = request.POST['mail']
+        linkedin = request.POST['linkedin']
 
         if(int(check) == 1):
             hero = heroModel.objects.filter(username=request.user).first()
             print(hero)
 
             user_hero = heroModel(id=hero.id, username=request.user.username, before_name=before_name,
-                                  fullname=name, before_description=before_desc, description=desc)
+                                  fullname=name, before_description=before_desc, description=desc,facebook=facebook,github=github,mail=mail,linkedin=linkedin)
+            user_hero.save()
+
+
+
             print("_______________")
             print("in check........")
             print(check)
@@ -89,7 +99,6 @@ def CreateheroView(request):
             print(hero.id)
             # print(user_hero)
             print("_______________")
-            user_hero.save()
 
         else:
             print("not 1")
@@ -97,6 +106,7 @@ def CreateheroView(request):
 
             user_hero = heroModel.objects.create(
                 username=request.user, before_name=before_name, fullname=name, before_description=before_desc, description=desc)
+            
         if(user_hero):
             return JsonResponse({
                 'data': 'created',
