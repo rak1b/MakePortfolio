@@ -2,6 +2,7 @@
 
 <section id="hero_container">
 <div class="port_hero" id="home">
+
   
   <div class="hero_left">
     <input type="hidden" name="check" value={{data.check}}>
@@ -20,13 +21,13 @@
     <p id="main_desc">
       {{data.description}}
     </p>
-    <button class="btn btn-danger">Say Hello</button>
-  </div>
-
-  <div class='hero_right'>
-    {% include 'hero/social.html' %}
+    <button class="btn resume_btn "><a class="" href="{{navbar.resume.url}}">Resume</a></button>
+  
 
   </div>
+  {% include 'hero/social.html' %}
+
+  
 </div>
 </section>
 

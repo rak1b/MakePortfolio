@@ -53,16 +53,37 @@
 .social svg{
   opacity: 0.4;
   width: 40px;
+  height: 40px;
 
 
 }
+
+.social svg:hover{
+  fill: var(--pink-red);
+
+
+}
+.resume_btn{
+	background: var(--pink-red);
+	outline: none;
+	border: none;
+}
+
+.resume_btn a{
+	color: var(--white) !important;
+  text-decoration: none;
+  background: none;
+
+}
+
+  
 
   
 
 
 .hero_right {
 	width: 40px;
-  margin: 1rem 0;
+  margin-top: 7rem;
 }
 
 .line{
