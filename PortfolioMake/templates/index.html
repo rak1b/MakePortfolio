@@ -3,7 +3,8 @@
 {% block title %} Landing {%endblock %} 
 {% block content %}
 
-<div>
+
+  
 <div class="landing_container shadow-lg">
   <div class="landing_inner_container ">
     <div class="landing_text">
@@ -11,13 +12,38 @@
 
    
       <h1>Make Portfolio</h1>
-      <div class="image_container">
-        <img
-        class="landing_img"
-        src="{%static 'assets/img/hero.png'%}"
-        alt=""
-        srcset=""
-      />
+      <div id="image_container1" class="image_container">
+       
+
+      <section class="splide" id="splide1" aria-labelledby="carousel-heading">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide"> 
+              <img
+              class="landing_img"
+              src="{%static 'assets/img/hero.png'%}"
+              alt=""
+              srcset=""
+            /></li>
+            <li class="splide__slide">
+              <img
+              class="landing_img"
+              src="{%static 'assets/img/hero.png'%}"
+              alt=""
+              srcset=""
+            />
+            </li>
+            <li class="splide__slide">
+              <img
+              class="landing_img"
+              src="{%static 'assets/img/hero.png'%}"
+              alt=""
+              srcset=""
+            />
+            </li>
+          </ul>
+        </div>
+      </section> 
       </div>
 
       <p>Make your portfolio completely free with less time..</p>
@@ -28,20 +54,59 @@
 
    
   </div>
+
+  
+
+  
+
+  <div class="image_container" id="image_container2">
+      <section id="splide2" class="splide" aria-labelledby="carousel-heading">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide"> 
+              <img
+              class="landing_img"
+              src="{%static 'assets/img/hero.png'%}"
+              alt=""
+              srcset=""
+            /></li>
+            <li class="splide__slide">
+              <img
+              class="landing_img"
+              src="{%static 'assets/img/hero.png'%}"
+              alt=""
+              srcset=""
+            />
+            </li>
+            <li class="splide__slide">
+              <img
+              class="landing_img"
+              src="{%static 'assets/img/hero.png'%}"
+              alt=""
+              srcset=""
+            />
+            </li>
+          </ul>
+        </div>
+      </section>
   </div>
-{% comment %}  
-  <div class="image_container">
-    <img
-    class="landing_img"
-    src="{%static 'assets/img/hero.png'%}"
-    alt=""
-    srcset=""
-  />
-  </div> {% endcomment %}
 
 </div>
 
 <script>
-  // console.log(document.getElementById('back').removeAttribute('id'))  
+ // new Splide( '#splide1' ).mount();
+ // new Splide( '#splide2' ).mount();
+
+  new Splide( '#splide1', {
+    type    : 'loop',
+    perPage : 1,
+    autoplay: true,
+  } ).mount();
+
+  new Splide( '#splide2', {
+    type    : 'loop',
+    perPage : 1,
+    autoplay: true,
+  } ).mount();
 </script>
 {% endblock %}

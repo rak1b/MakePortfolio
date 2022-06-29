@@ -1,119 +1,129 @@
-{% load socialaccount %}
-<div class="bg-white w-50 m-auto p-5">
-  <div class="p-5 flex flex-row" style="display: flex">
-    <div class="signup-form w-50 bg-success p-5" id="signupForm">
-      <form action="" method="POST">
+{% load socialaccount %} 
+
+<section class="forms-section">
+  <h1 class="section-title">
+    Please,Do a Quick Signup,It won't take more than 20 seconds..
+  </h1>
+  <div class="forms">
+    <div class="form-wrapper is-active">
+      <button type="button" class="switcher switcher-login">
+        Login
+        <span class="underline"></span>
+      </button>
+      <form class="form form-login" method="POST" id="loginForm">
         {% csrf_token %}
-        <h1 class="text-capitalize text-center">Create an Account</h1>
-        <p class="hint-text text-center">
-          Sign up with your social media account or email address
-        </p>
+        <fieldset>
+          <div class="input-block">
+            <label for="login-email">Username</label>
+            <input
+              id="login-email"
+              type="text"
+              class=""
+              name="login_username"
+              placeholder="Username"
+              required="required"
+            />
+          </div>
+          <div class="input-block">
+            <label for="login-password">Password</label>
+            <input
+              id="login-password"
+              type="password"
+              name="login_password"
+              placeholder="Password"
+              required="required"
+            />
+          </div>
+        </fieldset>
+        <button type="submit" id="login_btn" class="signup_button">
+          Login
+        </button>
 
-        <div class="form-group mt-4">
-          <input
-            type="text"
-            class="form-control input-lg"
-            name="username"
-            placeholder="Username"
-            required="required"
-          />
-        </div>
-        <div class="form-group mt-4">
-          <input
-            type="email"
-            class="form-control input-lg"
-            name="email"
-            placeholder="Email Address"
-            required="required"
-          />
-        </div>
-        <div class="form-group mt-4">
-          <input
-            type="password"
-            class="form-control input-lg"
-            name="password"
-            placeholder="Password"
-            required="required"
-          />
-        </div>
-        <div class="form-group mt-4">
-          <input
-            type="password"
-            class="form-control input-lg"
-            name="confirm_password"
-            placeholder="Confirm Password"
-            required="required"
-          />
-        </div>
-
-        <div class="form-group mt-4">
-          <input
-            id="signup_btn"
-            type="button"
-            class="btn btn-outline-light btn-lg btn-block signup-btn"
-            value="Sign Up"
-          />
-        </div>
       </form>
-
-      <!-- <div class="text-center">Already have an account? <a id="openLogin" href="#">Login here</a></div> -->
     </div>
+    <div class="form-wrapper">
+      <button type="button" class="switcher switcher-signup">
+        Sign Up
+        <span class="underline"></span>
+      </button>
+      <form class="form form-signup">
+        <fieldset>
+          <div class="input-block">
+            <label for="signup-username">Username</label>
+            <input id="signup-email" name="username" type="text" required />
+          </div>
+          <div class="input-block">
+            <label for="signup-email">E-mail</label>
+            <input id="signup-email" name="email" type="email" required />
+          </div>
+          <div class="input-block">
+            <label for="signup-password ">Password</label>
+            <input
+              id="signup-password"
+              name="password"
+              type="password"
+              required
+            />
+          </div>
 
-    <div class="login-form w-50 bg-info p-5" id="loginForm">
-      <form action="" method="post">
-        {% csrf_token %}
+          <div class="input-block">
+            <label for="signup-password ">Confirm Password</label>
+            <input
+              id="signup-password"
+              name="confirm_password"
+              type="password"
+              required
+            />
+          </div>
+        </fieldset>
+        <button type="submit" id="signup_btn" class="signup_button">
+          Sign Up
+        </button>
 
-        <h1 class="text-capitalize text-center">Login</h1>
-        <p class="hint-text text-center">Login with gmail or email address</p>
-
-        <div class="form-group mt-4">
-          <input
-            type="text"
-            class="form-control input-lg"
-            name="login_username"
-            placeholder="Username"
-            required="required"
-          />
-        </div>
-        <div class="form-group mt-4">
-          <input
-            type="password"
-            class="form-control input-lg"
-            name="login_password"
-            placeholder="Password"
-            required="required"
-          />
-        </div>
-
-        <div class="form-group mt-4 text-black">
-          <input
-            id="login_btn"
-            type="button"
-            class="btn btn-outline-light btn-lg btn-block login-btn"
-            value="Login"
-          />
-        </div>
+        
       </form>
     </div>
   </div>
-
-  <div class="or-seperator text-center text-capitalize text-danger my-4">
-    <b>or</b>
+  <div class="or-seperator text-center text-capitalize text-white my-4">
+    <b>oR</b>
   </div>
 
-  <div class="social-btn text-center">
-    <h4 class="text-danger">
-      Login With
-      <a href="{% provider_login_url 'google' %}" class="btn btn-danger btn-lg"
-        ><i class="fa fa-google"></i> Google</a
-      >
+  <div class="social-btn text-center mb-5">
+    <h4 class="">
+      <a href="{% provider_login_url 'google' %}" class=""
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 48 48"
+          width="80px"
+          height="80px"
+        >
+          <path
+            fill="#FFC107"
+            d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+          />
+          <path
+            fill="#FF3D00"
+            d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
+          />
+          <path
+            fill="#4CAF50"
+            d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
+          />
+          <path
+            fill="#1976D2"
+            d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
+          />
+        </svg>
+      </a>
     </h4>
   </div>
-</div>
+</section>
 
 <script>
   const signup_function = () => {
-    $("#signup_btn").click(() => {
+    $("#signup_btn").click((e) => {
+      e.preventDefault();
+
       const username = document.getElementsByName("username")[0].value;
       const email = document.getElementsByName("email")[0].value;
       const password = document.getElementsByName("password")[0].value;
@@ -148,10 +158,9 @@
           console.log(res);
           alert("Account Created Successfully..");
         },
-        error:(error)=>{
+        error: (error) => {
           alert("Sign Up Failed..");
-
-        }
+        },
       });
 
       console.log("signup update btn clicked");
@@ -159,7 +168,8 @@
   };
 
   const Login_function = () => {
-    $("#login_btn").click(() => {
+    $("#login_btn").click((e) => {
+      e.preventDefault();
       console.log("login button clicked");
       const username = document.getElementsByName("login_username")[0].value;
       const password = document.getElementsByName("login_password")[0].value;
@@ -177,23 +187,29 @@
         data: data,
         success: (res) => {
           console.log(res);
-          if(res.status === 400){
-            alert(res.data)
-          }else{
+          if (res.status === 400) {
+            alert(res.data);
+          } else {
             window.location.reload(true);
-
           }
-
         },
-        
       });
-
     });
-    
   };
 
   $(document).ready(() => {
     signup_function();
     Login_function();
+  });
+
+  const switchers = [...document.querySelectorAll(".switcher")];
+
+  switchers.forEach((item) => {
+    item.addEventListener("click", function () {
+      switchers.forEach((item) =>
+        item.parentElement.classList.remove("is-active")
+      );
+      this.parentElement.classList.add("is-active");
+    });
   });
 </script>
