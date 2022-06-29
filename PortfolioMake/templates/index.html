@@ -2,10 +2,24 @@
 {% load static %} 
 {% block title %} Landing {%endblock %} 
 {% block content %}
+
+<div>
 <div class="landing_container shadow-lg">
   <div class="landing_inner_container ">
     <div class="landing_text">
+      
+
+   
       <h1>Make Portfolio</h1>
+      <div class="image_container">
+        <img
+        class="landing_img"
+        src="{%static 'assets/img/hero.png'%}"
+        alt=""
+        srcset=""
+      />
+      </div>
+
       <p>Make your portfolio completely free with less time..</p>
       <h5>Free-Quick-Fast</h5>
 
@@ -14,15 +28,16 @@
 
    
   </div>
-
+  </div>
+{% comment %}  
   <div class="image_container">
     <img
     class="landing_img"
-    src="{%static 'assets/img/landing.svg'%}"
+    src="{%static 'assets/img/hero.png'%}"
     alt=""
     srcset=""
   />
-  </div>
+  </div> {% endcomment %}
 
 </div>
 
