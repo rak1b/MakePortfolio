@@ -70,7 +70,7 @@
       const image = document.getElementById("imgInput")
       const img_placeholder = document.getElementById("img_placeholder")
       const upload_container_img = document.getElementById("upload_container_img")
-      console.log(image.files[0]);
+      console.log(image.filess[0]);
       const file = image.files[0];
       img_placeholder.innerHTML =file.name
       img_placeholder.classList.add('edit_img_placeholder')
@@ -89,11 +89,10 @@
       const title = document.getElementsByName("title")[0]
       const short_description = document.getElementsByName("short_description")[0]
       const full_description = document.getElementsByName("full_description")[0]
-      const image = document.getElementById("imgInput")
+      const image = document.getElementById("project_image")
     const csrfmiddlewaretoken = document.getElementsByName("csrfmiddlewaretoken")[1]
     let data = new FormData();	
     // let formdata = new FormData($('#project_Form').get(0));	
-      console.log(image.files[0]);
     data.append('id',$('#update_project_id')[0].value);
     data.append('title',title.value);
     data.append('short_description',short_description.value);

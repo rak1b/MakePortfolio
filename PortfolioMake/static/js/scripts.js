@@ -130,6 +130,8 @@ const ImagePreview = (hiddenImageInput,ImagePlaceHolder,PreviewImage)=>{
   img_placeholder.innerHTML =file.name
   img_placeholder.classList.add('edit_img_placeholder')
   previewImage.src=URL.createObjectURL(file)
+  console.log(image.files[0]);
+
 
 }
 

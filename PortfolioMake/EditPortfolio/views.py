@@ -138,6 +138,8 @@ class ProjectView(View):
 
     })
     def post(self,request):
+        print("_____________")
+        print("in post method")
         id = request.POST['id']
         title = request.POST['title']
         image = request.FILES.get('image')
@@ -156,6 +158,9 @@ class ProjectView(View):
         user = request.user
         id=int(id)
         if id:
+            print("___________________")
+            print("in if")
+            print("___________________")
             pmodel = projectsModel.objects.filter(id=id).first()
             pmodel.title = title
             pmodel.short_description = short_description
@@ -170,13 +175,20 @@ class ProjectView(View):
             
             print("full_description")
             print(full_description)
+            {
+            'data': 'Project Updated..',
+            'status': 200
+        }
         else:
             psave = projectsModel.objects.create(
             user=user, title=title,image=image, short_description=short_description, full_description=full_description)
-        return JsonResponse({
+            psave.save()
+            print("in create function")
+            response = {
             'data': 'Project Added..',
             'status': 200
-        })
+        }
+        return JsonResponse(response)
 
     
 

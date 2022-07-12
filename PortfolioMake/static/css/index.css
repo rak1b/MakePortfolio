@@ -279,9 +279,9 @@ display: none;
     display: block;
   }
 
-  .element_show {
-    width: 55vh !important;
-  }
+  /* .element_show {
+    width: 55vw !important;
+  } */
   .landing_container{
 	flex-wrap: wrap;
   width: 90%;
@@ -308,3 +308,5 @@ display: none;
   }
 
   }
+
+  /* for Mobile devices */

@@ -28,7 +28,15 @@
     <p id="main_desc">
       {{data.description}}
     </p>
-    <button class="btn resume_btn "><a class="" href="{{navbar.resume.url}}">Resume</a></button>
+    
+   
+    <button class="btn resume_btn "><a class=""
+       {% if navbar.resume %}
+      href="{{navbar.resume.url}}"
+      {% else %}
+      href="/"
+      {%endif%}
+      >Resume</a></button>
   
 
   </div>
