@@ -17,7 +17,7 @@
 .edit_btn:hover {
   background: rgb(238, 66, 66);
 }
-.editBar {
+/* .editBar {
 	position: fixed;
 	bottom: 5%;
 	left: 50%;
@@ -27,8 +27,30 @@
 	width: auto;
 	cursor: pointer;
 	box-shadow: 98px 42px 78px -14px rgba(0,0,0,0.1);
+} */
+
+.editBar {
+	bottom: 12%;
+	z-index: 150;
+	border-radius: 10px;
+	width: 95vw;
+	cursor: pointer;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+  
 }
 
+.editBar_menu {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 10px;
+	box-shadow: 98px 42px 78px -14px rgba(0,0,0,0.1);
+	position: fixed
+
+
+}
 .editBar_close {
   width: 4rem;
   height: 4rem;
@@ -42,13 +64,6 @@
   top: -29px;
   right: -23px;
 }
-.editBar_menu {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin: 10px;
-}
-
 .editBar_menu button {
   width: 40%;
   border-radius: 6px;
@@ -230,7 +245,23 @@ label{
     width: 5rem;
     height: 5rem;
   }
+  .editBar_btn_group svg {
+    margin: 0 2px;
+    width: 10px;
+  }
 
+  .editBar_btn_group {
+    padding: 2px;
+    margin: 2px 1px;
+    height: 30px;
+  }
+
+  .editBar {
+    bottom: 5%;
+    width: 95vw;
+    position: absolute;
+  }
+ 
   }
 
 @media only screen and (min-width: 751px) and (max-width: 1300px) {

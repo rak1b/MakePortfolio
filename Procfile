@@ -1,0 +1,1 @@
+web: gunicorn PortfolioMake.PortfolioMake.wsgi
